@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Introduction from "./Introduction";
+import Introduction from "./components/Introduction";
 
 function App() {
   return (
