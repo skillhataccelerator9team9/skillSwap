@@ -9,7 +9,17 @@ const { json } = require("body-parser");
 dotenv.config();
 const app = express();
 
-app.use(cors());
+var whitelist = [
+  "http://localhost:3000",
+  "http://159.223.106.163",
+  "http://skillswap.life",
+];
+
+const corsOptions = {
+  origin: whitelist,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB connection
