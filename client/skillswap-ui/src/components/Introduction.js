@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Introduction = () => {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/")
+      .then((response) => {
+        setMessage(response.data.message);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
+
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Welcome to Skill Swap</h1>
-      <p style={styles.paragraph}>
-        Skill Swap is a platform where you can exchange skills with others. Sign
-        up, showcase your skills, and connect with people who have the skills
-        you need. Together, we can help each other grow and learn!
-      </p>
+      <h1>{message || "Loading..."}</h1>
     </div>
   );
 };

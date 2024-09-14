@@ -22,7 +22,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Backend is running");
+  res.json({ message: "Backend is running and connected!" });
 });
 
 const PORT = process.env.PORT || 5000;
