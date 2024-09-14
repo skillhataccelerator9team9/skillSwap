@@ -6,7 +6,7 @@ const Introduction = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/")
+      .get("http://localhost:80/")
       .then((response) => {
         setMessage(response.data.message);
       })
