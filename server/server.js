@@ -18,7 +18,7 @@ const corsOptions = {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error("CORS error: This origin is not allowed"));
     }
   },
   optionsSuccessStatus: 200,
