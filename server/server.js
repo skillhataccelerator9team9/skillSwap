@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 var whitelist = [
-  "http://localhost:5000",
+  "http://localhost:3000",
   "http://159.223.106.163",
   "http://skillswap.life",
 ];
