@@ -34,7 +34,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.error("MongoDB connection error: ", err.message));
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
