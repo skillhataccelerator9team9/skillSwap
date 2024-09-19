@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import Login from "./Login";
+
+
 const Introduction = () => {
   const [message, setMessage] = useState("");
 
@@ -18,7 +21,10 @@ const Introduction = () => {
   return (
     <div style={styles.container}>
       <h1>{message || "Loading..."}</h1>
+
+      <Login />
     </div>
+
   );
 };
 
