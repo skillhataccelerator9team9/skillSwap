@@ -1,10 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const bcryptjs = require("bcryptjs");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
-const { json } = require("body-parser");
 
 dotenv.config();
 const app = express();
@@ -20,7 +17,7 @@ const corsOptions = {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error("CORS error: This origin is not allowed"));
     }
   },
   optionsSuccessStatus: 200,
@@ -36,11 +33,10 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.error("MongoDB connection error: ", err.message));
 
-app.get("/", (req, res) => {
-  res.json({ message: "Skill Swap" });
-});
+// Routes
+app.use("/api/auth", require("./routes/auth"));
 
 const PORT = process.env.PORT || 5000;
 
