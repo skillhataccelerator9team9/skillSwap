@@ -23,7 +23,7 @@ router.post("/add", authMiddleware, async (req, res) => {
     user.skills.push(newSkill._id);
     await user.save();
 
-    res.json(user.skills);
+    res.json(user.newSkill);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
