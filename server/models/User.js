@@ -6,14 +6,7 @@ const UserSchema = new mongoose.Schema({
   profileImage: { type: String },
   location: { type: String },
   availableDays: { type: [String] },
-  skills: [
-    {
-      skillName: String,
-      levelOfExperience: String,
-      skillValue: Number,
-      skillImage: String,
-    },
-  ],
+  skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }],
   reviews: [{ reviewText: String, rating: Number }],
 });
 
