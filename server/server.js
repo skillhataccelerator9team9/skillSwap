@@ -38,6 +38,8 @@ mongoose
 // Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/protected", require("./routes/protectedRoute"));
+app.use("/api/skills", require("./routes/skillRoutes"));
+app.use("/api/profile", require("./routes/profileRoutes"));
 
 const PORT = process.env.PORT || 5000;
 
