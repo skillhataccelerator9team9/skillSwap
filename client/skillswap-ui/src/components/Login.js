@@ -27,6 +27,14 @@ const Login = () => {
     if (buttonName === "Sign In") {
       console.log("You are in Sign In");
 
+
+    }
+    else {
+      console.log("You are in Sign up");
+      console.log({ username });
+      console.log({ email });
+      console.log({ password });
+
       try {
         const config = {
           headers: {
@@ -34,25 +42,19 @@ const Login = () => {
           },
         };
 
-        const body = JSON.stringify({ email, password });
+        const body = JSON.stringify({ username, email, password });
         console.log(body);
 
-        const res = await axios.post("http://localhost:80//api/auth/login", body, config);
+        const res = await axios.post("http://localhost:80/api/auth/signup", body, config);
 
         console.log(res.data); // This will contain the JWT token
-        alert("Sign in successful!");
+        alert("Signup successful!");
       } catch (err) {
         console.error(err.response.data);
-        alert("Signin failed. Please check your details.");
+        alert("Signup failed. Please check your details.");
       }
-    }
-    else {
-      console.log("You are in Sign up");
 
     }
-
-
-
   };
 
   return (
