@@ -6,21 +6,23 @@ import Login from "./Login";
 
 const Introduction = () => {
   const [message, setMessage] = useState("");
+  const [appName, setAppName] = useState("Skill Swap");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:80/")
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the data!", error);
-      });
+    // axios
+    //   .get("http://localhost:80")
+    //   .then((response) => {
+    //     // setMessage(response.data.message);
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error fetching the data!", error);
+    //   });
   }, []);
 
   return (
     <div style={styles.container}>
-      <h1>{message || "Loading..."}</h1>
+      <h1>{appName}</h1>
 
       <Login />
     </div>
