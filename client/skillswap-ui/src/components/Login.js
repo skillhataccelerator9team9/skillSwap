@@ -28,6 +28,27 @@ const Login = () => {
       console.log("You are in Sign In");
 
 
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+
+        const body = JSON.stringify({ email, password });
+        console.log(body);
+
+        const res = await axios.post("http://localhost:80/api/auth/login", body, config);
+
+        console.log(res.data); // This will contain the JWT token
+        alert("Login successful!");
+      } catch (err) {
+        console.error(err.response.data);
+        console.error('Error:', err);  // Check if there’s an error in the request
+        console.error('Error response:', err.response); // Check if the response is being sent by backend
+        alert("Login failed. Please check your credentials.");
+      }
+
     }
     else {
       console.log("You are in Sign up");
