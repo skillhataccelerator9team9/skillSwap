@@ -23,7 +23,7 @@ router.post("/add", authMiddleware, async (req, res) => {
     user.skills.push(newSkill._id);
     await user.save();
 
-    res.json(user.newSkill);
+    res.json(newSkill);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -33,7 +33,11 @@ router.post("/add", authMiddleware, async (req, res) => {
 // Get all skills for a user
 router.get("/", authMiddleware, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).populate("skills");
+    const user = await User.findById(req.user.id).populate({
+      path: "skills",
+      model: "Skill",
+    });
+    //challenge: .populate("skills") didn't populate the 'skills' array
     res.json(user.skills);
   } catch (err) {
     console.error(err.message);
