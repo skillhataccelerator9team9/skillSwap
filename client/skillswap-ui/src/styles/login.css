@@ -122,6 +122,18 @@
   border: 2px solid var(--primaryColor);
 }
 
+.login .secContainer .loginForm .login-Form .message {
+  color: var(--blackColor);
+}
+
+.login .secContainer .loginForm .login-Form .message .messageLogin {
+  color: var(--primaryColor);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
 /* Media Queries =====================> */
 @media screen and (min-width: 950px) {
   .login .secContainer .loginForm {
