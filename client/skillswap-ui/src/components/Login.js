@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import '../styles/login.css'
 
@@ -20,15 +21,40 @@ const Login = () => {
     console.log("Switch login");
   };
 
-  const loginFunction = (e) => {
+  const loginFunction = async (e) => {
     e.preventDefault();
 
-    console.log({ username });
-    console.log({ email });
-    console.log({ password });
+    if (buttonName === "Sign In") {
+      console.log("You are in Sign In");
 
 
-    console.log("Login function");
+    }
+    else {
+      console.log("You are in Sign up");
+      console.log({ username });
+      console.log({ email });
+      console.log({ password });
+
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+
+        const body = JSON.stringify({ username, email, password });
+        console.log(body);
+
+        const res = await axios.post("http://localhost:80/api/auth/signup", body, config);
+
+        console.log(res.data); // This will contain the JWT token
+        alert("Signup successful!");
+      } catch (err) {
+        console.error(err.response.data);
+        alert("Signup failed. Please check your details.");
+      }
+
+    }
   };
 
   return (
