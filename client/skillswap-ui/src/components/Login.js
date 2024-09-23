@@ -8,9 +8,9 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [buttonName, setButtonName] = useState('Sign In');
-  const [message1, setMessage1] = useState('Need an account?');
-  const [message2, setMessage2] = useState('Sign Up');
+  const [buttonName, setButtonName] = useState('Sign Up');
+  const [message1, setMessage1] = useState('Already have an account?');
+  const [message2, setMessage2] = useState('Sign In');
 
   const switchLogin = (e) => {
     e.preventDefault();
@@ -27,7 +27,6 @@ const Login = () => {
     if (buttonName === "Sign In") {
       console.log("You are in Sign In");
 
-
       try {
         const config = {
           headers: {
@@ -42,6 +41,11 @@ const Login = () => {
 
         console.log(res.data); // This will contain the JWT token
         alert("Login successful!");
+
+        setUsername('');
+        setEmail('');
+        setPassword('');
+
       } catch (err) {
         console.error(err.response.data);
         console.error('Error:', err);  // Check if there’s an error in the request
@@ -52,9 +56,6 @@ const Login = () => {
     }
     else {
       console.log("You are in Sign up");
-      console.log({ username });
-      console.log({ email });
-      console.log({ password });
 
       try {
         const config = {
@@ -70,10 +71,19 @@ const Login = () => {
 
         console.log(res.data); // This will contain the JWT token
         alert("Signup successful!");
+
+        setUsername('');
+        setEmail('');
+        setPassword('');
+
+        setButtonName('Sign In');
+        setMessage1('Need an account?');
+        setMessage2('Sign Up');
       } catch (err) {
         console.error(err.response.data);
         alert("Signup failed. Please check your details.");
       }
+
 
     }
   };
