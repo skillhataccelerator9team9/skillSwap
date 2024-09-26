@@ -79,6 +79,7 @@ const Login = () => {
         setButtonName('Sign In');
         setMessage1('Need an account?');
         setMessage2('Sign Up');
+
       } catch (err) {
         console.error(err.response.data);
         alert("Signup failed. Please check your details.");
