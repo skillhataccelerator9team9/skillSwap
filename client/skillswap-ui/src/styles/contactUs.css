@@ -122,6 +122,11 @@
   border: 2px solid var(--primaryColor);
 }
 
+.contact .secContainer .contactForm .contactUsForm .buttonAndStatus {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Media Queries =====================> */
 @media screen and (min-width: 950px) {
   .contact .secContainer .contactForm {
