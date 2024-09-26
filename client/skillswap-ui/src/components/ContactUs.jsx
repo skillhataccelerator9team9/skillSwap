@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import '../styles/contactUs.css'
 
@@ -9,10 +10,48 @@ const ContactUs = () => {
   const [email, setEmail] = useState('');
   // const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [statusMessage, setStatusMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState('');
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
+
+    console.log("message");
+
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const body = JSON.stringify({ name, email, message });
+      console.log(body);
+
+      const res = await axios.post("http://localhost:80/api/auth/contact", body, config);
+
+      console.log(res.data); // This will contain the JWT token
+
+      console.log("Email sent successfully", res);
+      alert("Message sent successful!");
+      setStatusMessage("Message sent..")
+
+      setTimeout(() => {
+        setStatusMessage("")
+      }, 5000) // Hide the message after 5 seconds
+
+
+      setName('');
+      setEmail('');
+      setMessage('');
+
+    } catch (err) {
+      console.log(err.text);
+
+      setStatusMessage("Email Failed..")
+      setTimeout(() => {
+        setStatusMessage("")
+      }, 5000) // Hide the message after 5 seconds
+    }
 
   };
 
