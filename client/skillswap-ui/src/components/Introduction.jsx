@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Login from "./Login";
+import ContactUs from "./ContactUs";
 
 
 const Introduction = () => {
@@ -23,8 +24,8 @@ const Introduction = () => {
   return (
     <div style={styles.container}>
       <h1>{appName}</h1>
-
-      <Login />
+      {/* <Login /> */}
+      <ContactUs />
     </div>
 
   );

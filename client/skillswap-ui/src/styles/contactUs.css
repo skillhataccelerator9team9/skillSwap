@@ -1,0 +1,264 @@
+/* Colors */
+:root {
+  --primaryColor: hsl(49, 76%, 45%);
+  /*   --primaryColor: hsl(26, 93%, 50%); */
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+  --boxShadow: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
+
+  --boxShadow1: 0 2px 8px 2px rgba(202, 170, 28, 0.45);
+}
+
+.contact {
+  /* background-color: black; */
+  background: var(--greyColor);
+  padding: 40px 30px 40px 30px;
+  /* padding: 40px 00px 40px 0px; */
+}
+
+.contact .secContainer {
+  gap: 1.5rem;
+}
+
+.contact .secContainer .contactTitle h1 {
+  padding-bottom: .5rem;
+  color: var(--primaryColor);
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact .secContainer .contactList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.contact .secContainer .contactList .contactItem {
+  background: var(--whiteColor);
+  padding: 20px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--blackColor);
+  border-radius: 1rem;
+  /* border-radius: 10px; */
+
+  /* uses to make the effect smooth */
+  transition: 0.5s;
+
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--boxShadow);
+}
+
+.contact .secContainer .contactList .contactItem:hover {
+  box-shadow: var(--boxShadow1);
+}
+
+.contact .secContainer .contactList .contactItem:hover .icon {
+  color: var(--whiteColor);
+}
+
+.contact .secContainer .contactList .contactItem .contactIcon {
+  text-align: center;
+  padding: 0.2rem;
+  /* bottom: -35%; */
+}
+
+.contact .secContainer .contactList .contactItem .contactIcon .icon {
+  font-size: 3rem;
+  color: var(--primaryColor);
+
+  /* padding: 1rem;
+  background: var(--primaryColor);
+  font-size: 4rem;
+  border-radius: 1rem;
+  color: var(--whiteColor);
+  border: 1px solid transparent; */
+  /* transition: .3s ease */
+}
+
+.contact .secContainer .contactList .contactItem h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--primaryColor);
+}
+
+/* .contact .secContainer .contactList .contactItem:hover h2{
+  color: var(--whiteColor);
+  border-bottom: 1px solid var(--whiteColor);
+} */
+
+.contact .secContainer .contactList .contactItem h3 {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* .contact .secContainer .contactList .contactItem:hover h3 {
+  color: var(--whiteColor);
+} */
+
+
+.contact .secContainer .map {
+  margin-top: 3.5rem;
+
+}
+
+.contact .secContainer .map iframe {
+  border-radius: 1rem;
+  border: 0;
+  box-shadow: var(--boxShadow);
+}
+
+.contact .secContainer .map:hover iframe {
+  box-shadow: var(--boxShadow1);
+}
+
+
+.contact .secContainer .contactForm {
+  margin-top: 3rem;
+  background: var(--whiteColor);
+  padding: 20px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--blackColor);
+  border-radius: 1rem;
+  /* uses to make the effect smooth */
+  transition: 0.5s;
+
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--boxShadow);
+}
+
+.contact .secContainer .contactForm .formTitle h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--primaryColor);
+  text-align: center;
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid var(--primaryColor); */
+}
+
+.contact .secContainer .contactForm .contactUsForm .buttonAndStatus {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact .secContainer .contactForm .contactUsForm .btn1 {
+  /* display: inline-block; */
+  width: fit-content;
+  background: var(--blackColor);
+  padding: 14px 50px;
+  border-radius: 16px;
+  /* text-decoration: none; */
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  /* uses to make background color effect smooth */
+  transition: 0.5s;
+}
+
+.contact .secContainer .contactForm:hover {
+  box-shadow: var(--boxShadow1);
+}
+
+.contact .secContainer .contactForm .contactUsForm .btn:hover {
+
+  background: var(--primaryColor);
+}
+
+.contact .secContainer .contactForm .contactUsForm h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primaryColor);
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.contact .secContainer .contactForm .contactUsForm form {
+  width: 100%;
+}
+
+.contact .secContainer .contactForm .contactUsForm .contactInput {
+  width: 100%;
+  border: 2px solid #262626;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  /* border-radius: 6px; */
+  border-radius: 16px;
+}
+
+.contact .secContainer .contactForm .contactUsForm .contactInput:focus {
+  /* 
+  background: var(--primaryColor); */
+  /* outline: var(--primaryColor); */
+
+  /* outline: none !important; */
+  border: 2px solid var(--primaryColor);
+}
+
+.contact .photos {
+  /* display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 1rem; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-gap: 10px;
+  margin-top: 50px;
+}
+
+.contact .photos .photoItem {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 5px;
+
+  box-shadow: var(--boxShadow);
+  /* border-radius: 15px; */
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.9s;
+}
+
+.contact .photos .photoItem img {
+  width: 100%;
+  /* round border corners */
+  /* border-radius: 50% => this makes oval size image*/
+  /* border-radius: 15px; */
+  border: 2px solid var(--blackColor);
+
+  display: block;
+}
+
+.contact .photos .photoItem:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries =====================> */
+@media screen and (min-width: 950px) {
+  .contact .secContainer .contactForm {
+    width: 60%;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
