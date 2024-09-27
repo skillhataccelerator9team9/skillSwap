@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from "axios";
 
-import '../styles/contactUs.css'
+import '../styles/contactUS.css'
 
 
-const ContactUs = () => {
+const ContactUS = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -124,5 +124,5 @@ const ContactUs = () => {
   )
 }
 
-export default ContactUs
+export default ContactUS
 
