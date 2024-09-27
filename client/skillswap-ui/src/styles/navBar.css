@@ -107,7 +107,7 @@
   .navBarSection .header .navBar .navLists .navItem {
     /* on the wide screen padding should be: 0 1 rem */
     padding: 1rem 0;
-
+    list-style: none;
   }
 
   .navBarSection .header .navBar .navLists .navItem .navLink {
@@ -181,6 +181,7 @@
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    list-style-type: none;
   }
 
 
