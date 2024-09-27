@@ -15,9 +15,9 @@
 import React from 'react'
 import './App.css'
 
-import HomeScreen from './Screens/HomeScreen';
-import LoginScreen from './Screens/LoginScreen';
-import ContactScreen from './Screens/ContactScreen';
+import HomeScreen from './screens/HomeScreen';
+// import LoginScreen from './Screens/LoginScreen';
+// import ContactScreen from './Screens/ContactScreen';
 
 import {
   BrowserRouter as Router,
@@ -33,8 +33,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/Home" element={<HomeScreen />} />
-            <Route path="/Login" element={<LoginScreen />} />
-            <Route path="/contact" element={<ContactScreen />} />
+            {/* <Route path="/contact" element={<ContactScreen />} />
+            <Route path="/Login" element={<LoginScreen />} /> */}
           </Routes>
         }
       </Router>
