@@ -16,7 +16,7 @@ import React from 'react'
 import './App.css'
 
 import HomeScreen from './screens/HomeScreen';
-// import LoginScreen from './Screens/LoginScreen';
+import LoginScreen from './screens/LoginScreen';
 import ContactScreen from './screens/ContactScreen';
 
 import {
@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/Home" element={<HomeScreen />} />
             <Route path="/ContactUS" element={<ContactScreen />} />
-            {/* <Route path="/Login" element={<LoginScreen />} /> */}
+            <Route path="/Login" element={<LoginScreen />} />
           </Routes>
         }
       </Router>

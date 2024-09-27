@@ -29,7 +29,7 @@
 .contact .secContainer .contactTitle h1 {
   padding-bottom: .5rem;
   color: var(--primaryColor);
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
@@ -130,7 +130,7 @@
 /* Media Queries =====================> */
 @media screen and (min-width: 950px) {
   .contact .secContainer .contactForm {
-    width: 60%;
+    width: 50%;
     margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
