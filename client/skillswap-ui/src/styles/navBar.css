@@ -38,7 +38,6 @@
 .navBarSection .header .toggleNavbar .icon {
   font-size: 35px;
   color: var(--primaryColor);
-  /* border: 1px solid var(--primaryColor); */
 }
 
 .navBarSection .header .toggleNavbar .icon:hover {
