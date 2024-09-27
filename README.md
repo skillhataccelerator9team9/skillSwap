@@ -8,7 +8,7 @@ Skill Swap is a full-stack web application where users can sign up, list their s
 
 - User sign-up and login functionality.
 - Users can list their skills and request help from others.
-- A card system displaying users' skills, introduction, ratings, schedule, and a "Buzz" button.
+- A card system displaying skills, provider's introduction, ratings, schedule, and a "Request" button.
 - In-app chat for communication and scheduling meetings.
 - MongoDB database for storing user data.
 
