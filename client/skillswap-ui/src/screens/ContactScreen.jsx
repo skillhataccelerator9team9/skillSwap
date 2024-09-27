@@ -1,13 +1,13 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
-import ContactUS from '../components/ContactUS';
+import ContactUs from '../components/ContactUs';
 
 
 function ContactScreen () {
   return (
     <div className='ContactScreen'>
       <NavBar />
-      <ContactUS />
+      <ContactUs />
     </div>
   )
 }
