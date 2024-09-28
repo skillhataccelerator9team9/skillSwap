@@ -31,15 +31,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Redirect HTTP to HTTPS middleware
-app.use((req, res, next) => {
-  if (req.header("x-forwarded-proto") !== "https") {
-    res.redirect(`https://${req.header("host")}${req.url}`);
-  } else {
-    next();
-  }
-});
-
 // MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI)
@@ -63,22 +54,40 @@ app.get("*", (req, res) => {
   );
 });
 
-// SSL options
-const sslOptions = {
-  key: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/privkey.pem"),
-  cert: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/fullchain.pem"),
-};
+// Check environment
+if (process.env.NODE_ENV === "production") {
+  // Redirect HTTP to HTTPS
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https") {
+      res.redirect(`https://${req.header("host")}${req.url}`);
+    } else {
+      next();
+    }
+  });
 
-// Start HTTPS server
-const HTTPS_PORT = 443;
-https.createServer(sslOptions, app).listen(HTTPS_PORT, () => {
-  console.log(`App is listening on HTTPS port ${HTTPS_PORT}`);
-});
+  // SSL options
+  const sslOptions = {
+    key: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/fullchain.pem"),
+  };
 
-// Optional: Also listen on HTTP and redirect to HTTPS
-const HTTP_PORT = 80;
-http.createServer(app).listen(HTTP_PORT, () => {
-  console.log(
-    `App is listening on HTTP port ${HTTP_PORT}, redirecting to HTTPS`
-  );
-});
+  // Start HTTPS server on production
+  const HTTPS_PORT = 443;
+  https.createServer(sslOptions, app).listen(HTTPS_PORT, () => {
+    console.log(`App is listening on HTTPS port ${HTTPS_PORT}`);
+  });
+
+  // Start HTTP server to redirect to HTTPS
+  const HTTP_PORT = 80;
+  http.createServer(app).listen(HTTP_PORT, () => {
+    console.log(
+      `App is listening on HTTP port ${HTTP_PORT}, redirecting to HTTPS`
+    );
+  });
+} else {
+  // Local development, start only HTTP server
+  const PORT = process.env.PORT || 5000;
+  http.createServer(app).listen(PORT, () => {
+    console.log(`App is listening on HTTP port ${PORT}`);
+  });
+}
