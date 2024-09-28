@@ -1,3 +1,6 @@
+const https = require("https");
+const http = require("http"); // Also serve HTTP for redirection
+const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
