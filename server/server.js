@@ -24,8 +24,18 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+// General middleware
 app.use(cors(corsOptions));
 app.use(express.json());
+
+// Redirect HTTP to HTTPS middleware
+app.use((req, res, next) => {
+  if (req.header("x-forwarded-proto") !== "https") {
+    res.redirect(`https://${req.header("host")}${req.url}`);
+  } else {
+    next();
+  }
+});
 
 // MongoDB connection
 mongoose
