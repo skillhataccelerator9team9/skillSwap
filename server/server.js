@@ -60,8 +60,22 @@ app.get("*", (req, res) => {
   );
 });
 
-const PORT = process.env.PORT || 5000;
+// SSL options
+const sslOptions = {
+  key: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/skillswap.life/fullchain.pem"),
+};
 
-app.listen(PORT, () => {
-  console.log(`App is Listening on port ${PORT}`);
+// Start HTTPS server
+const HTTPS_PORT = 443;
+https.createServer(sslOptions, app).listen(HTTPS_PORT, () => {
+  console.log(`App is listening on HTTPS port ${HTTPS_PORT}`);
+});
+
+// Optional: Also listen on HTTP and redirect to HTTPS
+const HTTP_PORT = 80;
+http.createServer(app).listen(HTTP_PORT, () => {
+  console.log(
+    `App is listening on HTTP port ${HTTP_PORT}, redirecting to HTTPS`
+  );
 });
