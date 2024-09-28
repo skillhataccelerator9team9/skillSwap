@@ -31,14 +31,21 @@ mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error: ", err.message));
+//serve static build files from React app
+app.use(express.static(path.join(__dirname, "client/skillswap-ui/build")));
 
-// Routes
+//API Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/protected", require("./routes/protectedRoute"));
 app.use("/api/skills", require("./routes/skillRoutes"));
 app.use("/api/profile", require("./routes/profileRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
 app.use("/", require("./routes/home"));
+
+//serve React app for any other route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/skillswap-ui/build", "index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
 
