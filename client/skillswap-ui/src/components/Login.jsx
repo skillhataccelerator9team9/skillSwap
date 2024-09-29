@@ -95,7 +95,7 @@ const Login = () => {
       <div className="secContainer container grid">
 
         <div className="loginTitle">
-          <h1>Login</h1>
+          <h1>{buttonName}</h1>
         </div>
 
         <div className="loginForm">
