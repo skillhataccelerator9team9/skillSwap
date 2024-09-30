@@ -41,6 +41,7 @@ app.use(express.static(path.join(__dirname, "../client/skillswap-ui/build")));
 
 //API Routes
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/auth/google-login", require("./routes/auth"));
 app.use("/api/protected", require("./routes/protectedRoute"));
 app.use("/api/skills", require("./routes/skillRoutes"));
 app.use("/api/profile", require("./routes/profileRoutes"));
