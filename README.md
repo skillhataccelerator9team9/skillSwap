@@ -2,7 +2,7 @@
 
 today
 
-Skill Swap is a full-stack web application where users can sign up, list their skills, and request help for skills they need. They can browse through other users' profiles, see their skills, ratings, and availability, and request a session via the app's built-in chat feature.
+Skill Swap is a full-stack web application where users can sign up, list their skills, and request help for skills they need. They can browse through other users' profiles, see their skills, ratings, and availability, and request a session via the app's built-in chat feature..
 
 ## Features
 
