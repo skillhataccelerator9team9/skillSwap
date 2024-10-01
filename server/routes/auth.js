@@ -93,6 +93,13 @@ router.post(
         return res.status(400).json({ msg: "Invalid credentials" });
       }
 
+      // Check if the user signed up with Google
+      if (!user.password) {
+        return res.status(400).json({
+          msg: "This account was created using Google. Please sign in with Google.",
+        });
+      }
+
       const isMatch = await bcrypt.compare(password, user.password);
 
       if (!isMatch) {
