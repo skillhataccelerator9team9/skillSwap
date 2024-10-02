@@ -38,6 +38,7 @@ const Login = () => {
 
         const body = JSON.stringify({ email, password });
         console.log(body);
+
         console.log({ apiBaseUrl });
 
         const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
