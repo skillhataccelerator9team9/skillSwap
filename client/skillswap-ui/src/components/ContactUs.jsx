@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from "axios";
-
 import '../styles/contactUs.css'
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const ContactUs = () => {
 
@@ -26,8 +26,11 @@ const ContactUs = () => {
 
       const body = JSON.stringify({ name, email, message });
       console.log(body);
+      console.log({ apiBaseUrl });
 
-      const res = await axios.post("http://localhost:80/api/contact", body, config);
+      const res = await axios.post(`${apiBaseUrl}/contact`, body, config);
+
+      // const res = await axios.post("http://localhost:80/api/contact", body, config);
 
       console.log(res.data); // This will contain the JWT token
 
