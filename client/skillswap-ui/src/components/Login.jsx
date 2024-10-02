@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/login.css'
 
@@ -14,6 +15,7 @@ const Login = () => {
   const [message1, setMessage1] = useState('Already have an account?');
   const [message2, setMessage2] = useState('Sign In');
   const [message3, setMessage3] = useState('successfully_signin');
+  const navigate = useNavigate();  // Hook for navigation
 
   const switchLogin = (e) => {
     e.preventDefault();
@@ -52,6 +54,9 @@ const Login = () => {
         setUsername('');
         setEmail('');
         setPassword('');
+
+        navigate('/home');
+
 
       } catch (err) {
         console.error(err.response.data);
