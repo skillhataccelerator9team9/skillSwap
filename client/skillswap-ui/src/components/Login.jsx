@@ -3,6 +3,8 @@ import axios from "axios";
 
 import '../styles/login.css'
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
 const Login = () => {
 
   const [username, setUsername] = useState('');
@@ -36,8 +38,11 @@ const Login = () => {
 
         const body = JSON.stringify({ email, password });
         console.log(body);
+        console.log({ apiBaseUrl });
 
-        const res = await axios.post("http://localhost:80/api/auth/login", body, config);
+        const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
+
+        //const res = await axios.post("http://localhost:80/api/auth/login", body, config);
 
         console.log(res.data); // This will contain the JWT token
         alert("Login successful!");
