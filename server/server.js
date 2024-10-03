@@ -6,6 +6,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const path = require("path");
+const connectDB = require("./config/databaseConfig");
 
 dotenv.config();
 const app = express();
@@ -33,10 +34,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB connection
-mongoose
-  .connect(process.env.MONGO_URI, { dbName: "skillSwapDB" })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB connection error: ", err.message));
+connectDB();
+
 //serve static build files from React app
 app.use(express.static(path.join(__dirname, "../client/skillswap-ui/build")));
 
