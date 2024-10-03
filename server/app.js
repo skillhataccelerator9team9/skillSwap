@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const connectDB = require("./config/databaseConfig"); // Your new database connection file
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 

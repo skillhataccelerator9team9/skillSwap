@@ -2,9 +2,8 @@ const https = require("https");
 const http = require("http"); // Also serve HTTP for redirection
 const fs = require("fs");
 const dotenv = require("dotenv");
-const app = require("./app");
-
 dotenv.config();
+const app = require("./app");
 
 if (process.env.NODE_ENV === "production") {
   // SSL options

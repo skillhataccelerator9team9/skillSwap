@@ -8,8 +8,6 @@ const connectDB = async () => {
         : process.env.MONGO_URI;
 
     await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
       dbName:
         process.env.NODE_ENV === "test" ? "skillSwapDB_test" : "skillSwapDB",
     });
