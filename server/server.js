@@ -14,6 +14,7 @@ var whitelist = [
   "http://localhost:3000",
   "http://159.223.106.163",
   "http://skillswap.life",
+  "https://skillswap.life",
 ];
 
 const corsOptions = {
