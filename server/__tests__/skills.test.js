@@ -33,8 +33,8 @@ describe("Skills API", () => {
       .send(newSkill) // Send the new skill data in the request body
       .set(
         "Authorization",
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk0MDgyOCwiZXhwIjoxNzI3OTQ0NDI4fQ.1QNxOjBkEXb0iiJik5TWAgkKWAEk-q3Z6acjBvc94Xc"
-      ); // Mock JWT token for authentication
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk5NjcyMywiZXhwIjoxNzI4MDAwMzIzfQ.F8S5dwDWcHg98UM93fzmw5bsj4nFvRwGoxOIhQw7WWc"
+      );
 
     // Expect the status code to be 201, which means "Created"
     expect(res.statusCode).toEqual(201);
@@ -66,7 +66,7 @@ describe("Skills API", () => {
       .send(incompleteSkill)
       .set(
         "Authorization",
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk0MDgyOCwiZXhwIjoxNzI3OTQ0NDI4fQ.1QNxOjBkEXb0iiJik5TWAgkKWAEk-q3Z6acjBvc94Xc"
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk5NjcyMywiZXhwIjoxNzI4MDAwMzIzfQ.F8S5dwDWcHg98UM93fzmw5bsj4nFvRwGoxOIhQw7WWc"
       );
 
     // Expect the status code to be 400, which means "Bad Request"
