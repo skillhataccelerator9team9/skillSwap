@@ -1,13 +1,25 @@
 const request = require("supertest");
 const app = require("../app");
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
 describe("Skills API", () => {
+  let token;
   // Before running the tests, connect to the test database
   beforeAll(async () => {
     await mongoose.connect(process.env.MONGO_URI_TEST, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+    });
+    const testUser = new User({
+      username: "testuser",
+      email: "testuser@example.com",
+      password: "testpassword",
+    });
+    await testUser.save();
+    token = jwt.sign({ user: { id: testUser._id } }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
     });
   });
 
@@ -31,10 +43,7 @@ describe("Skills API", () => {
     const res = await request(app)
       .post("/api/skills/add") // The endpoint for adding skills
       .send(newSkill) // Send the new skill data in the request body
-      .set(
-        "Authorization",
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk5NjcyMywiZXhwIjoxNzI4MDAwMzIzfQ.F8S5dwDWcHg98UM93fzmw5bsj4nFvRwGoxOIhQw7WWc"
-      );
+      .set("Authorization", `Bearer ${token}`);
 
     // Expect the status code to be 201, which means "Created"
     expect(res.statusCode).toEqual(201);
@@ -64,10 +73,7 @@ describe("Skills API", () => {
     const res = await request(app)
       .post("/api/skills/add")
       .send(incompleteSkill)
-      .set(
-        "Authorization",
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZmZGNmMTBmNTNkMjZlNzJiZGIzNWQ0In0sImlhdCI6MTcyNzk5NjcyMywiZXhwIjoxNzI4MDAwMzIzfQ.F8S5dwDWcHg98UM93fzmw5bsj4nFvRwGoxOIhQw7WWc"
-      );
+      .set("Authorization", `Bearer ${token}`);
 
     // Expect the status code to be 400, which means "Bad Request"
     expect(res.statusCode).toEqual(400);
