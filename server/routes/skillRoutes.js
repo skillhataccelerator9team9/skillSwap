@@ -8,6 +8,12 @@ const User = require("../models/User");
 router.post("/add", authMiddleware, async (req, res) => {
   const { skillName, description, value, sampleWorkImage } = req.body;
 
+  if (!skillName || !description || !value) {
+    return res
+      .status(400)
+      .json({ msg: "Validation error: Missing required fields" });
+  }
+
   try {
     // Create a new skill document
     const newSkill = new Skill({
