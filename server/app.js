@@ -7,12 +7,7 @@ dotenv.config();
 
 const app = express();
 
-var whitelist = [
-  "http://localhost:3000",
-  "http://159.223.106.163",
-  "http://skillswap.life",
-  "https://skillswap.life",
-];
+var whitelist = ["http://localhost:3000", "https://skilltopia.ca"];
 
 const corsOptions = {
   origin: function (origin, callback) {
