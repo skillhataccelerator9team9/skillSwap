@@ -11,6 +11,7 @@ var whitelist = [
   "http://localhost:3000",
   "https://skilltopia.ca",
   "https://www.skilltopia.ca",
+  "https://skilltopia-backend.onrender.com",
 ];
 
 const corsOptions = {
