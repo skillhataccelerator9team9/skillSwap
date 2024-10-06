@@ -27,7 +27,8 @@ import {
 
 const App = () => {
   return (
-    <div className="app">
+    //check this className style
+    <div className="App">
       <Router>
         {
           <Routes>
