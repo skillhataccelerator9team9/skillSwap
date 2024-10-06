@@ -1,40 +1,15 @@
-// import React, { useState } from 'react';
-
-// import '../styles/LandingPageStyle.css'
-
-// import logo from '../assets/logo1.png'
-
-// const LandingPageNavBar = () => {
 
 
-//   return (
-//     <section className='landingPageNavBar'>
-//       <div class="container">
-//         <nav>
-//           <div className="logo">
-//             <img src={logo} alt="Image title" />
-//           </div>
-//           <ul id="sidemenu">
-//             <li><a href="#Home">Home</a></li>
-//             <li><a href="#AboutUS">About US</a></li>
-//             <li><a href="#HowItWork">How It Works</a></li>
-//             <li><a href="#WhyChooseUs">Why Choose Us</a></li>
-//             <li><a href="#Testimonial">Testimonial</a></li>
-//           </ul>
-//         </nav>
-//       </div>
-//     </section>
-//   )
-// }
-
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
-import '../styles/LandingPageStyle.css'
+
 
 import { FaWindowClose } from 'react-icons/fa'
 import { TbGridDots } from 'react-icons/tb'
 
 import logo from '../assets/logo1.png'
+
+import '../styles/LandingPageNavBarStyle.css'
 
 
 const LandingPageNavBar = () => {
@@ -87,7 +62,7 @@ const LandingPageNavBar = () => {
               <NavLink to="/Home" onClick={() => scrollPage()} className={({ isActive }) =>
                 isActive ? "activeNavLink" : "navLink"
               }>
-                HOME
+                Home
               </NavLink>
             </li>
 
