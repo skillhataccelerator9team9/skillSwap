@@ -1,245 +1,108 @@
-/* Colors */
-
-:root {
+/* :root {
   --primaryColor: hsl(137, 45, 44, 1);
   --warningColor: hsl(47, 100, 60, 1);
   --errorColor: hsl(0, 100, 43, 1);
   --textColor: hsl(0, 0, 22, 1);
   --neutral: hsl(0, 0, 100, 1);
   --backgroundColor: hsl(0, 0, 57, 1);
-
-  --HoverColor: hsl(26, 90%, 42%);
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
-  /* --textColor: hsl(240, 1%, 48%); */
-  --whiteColorDeam: hsl(0, 0%, 93%);
-  --greyBg: hsl(0, 0%, 96%);
-  --greyText: rgb(190, 190, 190);
-  --inputColor: hsl(330, 12%, 97%);
-  --shadow: hsl(0, 0%, 53%);
-  --boxShadow: 0 2px 8px 2px rgba(178, 178, 178 0.45);
-
-}
-
-/* .navBarSection { */
-/* top left bottom right */
-/* padding: 32px 100px 32px 100px;
 } */
 
+:root {
+  --primaryColor: hsl(137, 45%, 44%);
+  --warningColor: hsl(47, 100%, 60%);
+  --errorColor: hsl(0, 100%, 43%);
+  --textColor: hsl(0, 0%, 22%);
+  --neutral: hsl(0, 0%, 100%);
+  --backgroundColor: hsl(0, 0%, 57%);
+}
 
-.navBarSection .header {
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: var(--backgroundColor);
+  padding: 32px 100px;
+  width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+/* target navbar color to activeNavbar */
+.navbar.activeNavbar {
+  background-color: hsl(0, 0%, 100%);
+  /* or any other color you want */
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178 0.45);
+  /* Adding box-shadow for effect */
+}
+
+.navbar .navbar-container {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-  background: transparent;
-  width: 100%;
-  padding: 0.2rem 1rem 0rem 0.5rem;
-  z-index: 1000;
+  align-items: center;
 }
 
-/* .navBarSection .header .logoDiv .logo {
-  height: 200px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-} */
-
-.navBarSection .header .logoDiv .logo {
-  /* height: 20%; */
-  width: 32%;
-  object-fit: cover;
+/* Logo on the left */
+.navbar .navbar-logo {
+  width: 50px;
+  height: auto;
 }
 
-/*  .navBarSection .header .logoDiv .icon {
+/* Center the navbar items */
+.navbar .navbar-items {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar .navbar-item {
+  color: var(--neutral);
+  text-decoration: none;
+  margin: 0 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.navbar .navbar-item:hover {
   color: var(--primaryColor);
-  font-size: 25px;
-  margin-right: 10px;
-}  */
-
-.navBarSection .header .navBar .active {
-  color: var(--primaryColor);
+  /* HSL primary color for hover */
 }
 
-.navBarSection .header .toggleNavbar .icon {
-  font-size: 35px;
-  color: var(--primaryColor);
-  /* border: 1px solid var(--primaryColor); */
+/* Button on the right */
+.navbar .navbar-button {
+  background-color: hsl(137, 45%, 44%);
+  /* Should work now */
+  color: var(--neutral);
+  border: none;
+  width: 203px;
+  height: Fixed (48px);
+  gap: 8px;
+  border-radius: 10px;
+  opacity: 0px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  transition: background-color 0.3s;
 }
 
-.navBarSection .header .toggleNavbar .icon:hover {
-  /* color: var(--primaryColor); */
-  /* border: 1px solid var(--primaryColor); */
-  color: var(--blackColor);
-  /* border: 1px solid var(--blackColor); */
+.navbar .navbar-button:hover {
+  background-color: hsl(137, 45%, 60%);
+  /* Slightly lighter shade on hover */
   transition: .3s ease;
-  /* box-shadow: var(--boxShadow); */
-}
-
-/* target navbar color to activeHeader */
-.navBarSection .activeHeader {
-  background: var(--whiteColor);
-  /* box-shadow: var(--boxShadow); */
-  /* box-shadow: 0px 0.5px var(--shadow); */
-  box-shadow: var(--boxShadow);
-}
-
-/* only showing navlist without logo */
-@media screen and (max-width: 768px) {
-
-  .navBarSection .header .navBar {
-    background: var(--greyBg);
-    position: absolute;
-    height: max-content;
-    /* if small screen navBar on entire screen */
-    height: 50vh;
-    /* padding: 1rem 1rem 0.2rem 1rem; */
-    padding: 0.2rem 1rem 0rem 0.5rem;
-    width: 100%;
-    top: 0;
-    /*
-      it will keep small screen navbar active if left=0
-      left: 0;
-      navbar will disappear if left=-500%
-      navbar will comes from left hand side
-      */
-    left: -500%;
-    box-shadow: 0 2px 4px rgba(209, 209, 209, 0.904);
-    transition: .5s ease;
-    z-index: 1000;
-  }
-
-  .navBarSection .header .navBar .navLists {
-    /* navlist is coloum */
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-  }
-
-  .navBarSection .header .navBar .navLists .navItem {
-    /* on the wide screen padding should be: 0 1 rem */
-    padding: 1rem 0;
-    list-style: none;
-  }
-
-  .navBarSection .header .navBar .navLists .navItem .navLink {
-    /* color: var(--textColor); */
-    color: var(--blackColor);
-    font-size: .9rem;
-    font-weight: 600;
-  }
-
-  /* for active nav link */
-  .navBarSection .header .navBar .navLists .navItem .activeNavLink {
-    font-size: .9rem;
-    font-weight: 600;
-    color: var(--primaryColor);
-  }
-
-  .navBarSection .header .navBar .navLists .navItem .navLink:hover {
-    color: var(--primaryColor);
-  }
-
-  /* set the position of close icon with some other attributes */
-  .navBarSection .header .navBar .closeNavbar {
-    position: absolute;
-    top: 1rem;
-    /* padding: 0.2rem 1rem 0rem 0.5rem; */
-    /* 16px */
-    right: 0.9rem;
-    color: var(--primaryColor);
-
-  }
-
-  .navBarSection .header .navBar .closeNavbar:hover .icon {
-    color: var(--blackColor);
-    transition: .5s ease;
-  }
-
-  /* hide the navbar screen on small screen */
-  .navBarSection .header .activeNavbar {
-    left: 0;
-    /* transition: .5s ease;  */
-    transition: left 0.5s;
-  }
-}
-
-/* Media Queries =========================> */
-@media screen and (min-width: 769px) {
-
-  .navBarSection .header .logoDiv .logo img {
-    /* height: 20%; */
-    width: 50%;
-    object-fit: cover;
-  }
-
-  .navBarSection .toggleNavbar,
-  .closeNavbar {
-    display: none;
-  }
-
-  .navBarSection .header .navBar .logoDiv {
-    display: none;
-  }
-
-  .navBarSection .header {
-    /* padding: 1rem 1rem 0.2rem 1rem; */
-    padding: 0.2rem 1rem 0rem 0.5rem;
-  }
-
-  .navBarSection .header .navBar .navLists {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    list-style-type: none;
-  }
-
-
-  .navBarSection .header .navBar .navLists .navItem .navLink {
-    color: var(--blackColor);
-    padding: 0 .45rem;
-    font-size: .9rem;
-    font-weight: 600;
-    margin: 0rem 0.2rem;
-  }
-
-  .navBarSection .header .navBar .navLists .navItem .navLink:hover {
-    color: var(--primaryColor);
-  }
-
-  /* for active nav link */
-  .navBarSection .header .navBar .navLists .navItem .activeNavLink {
-    padding: 0 .45rem;
-    font-size: .9rem;
-    font-weight: 600;
-    color: var(--primaryColor);
-    margin: 0rem 0.2rem;
-  }
-}
-
-@media screen and (min-width: 950px) {
-
-  .navBarSection .header .logoDiv .logo img {
-    /* height: 20%; */
-    width: 35%;
-    object-fit: cover;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-
-  .navBarSection .header .logoDiv .logo img {
-
-    width: 25%;
-    object-fit: cover;
-  }
-
-  /* .about .secContainer .row1 {
-
-      display: grid;
-      grid-template-columns: repeat(2, 2fr);
-  } */
 }
