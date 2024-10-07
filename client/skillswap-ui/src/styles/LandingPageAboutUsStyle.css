@@ -1,27 +1,164 @@
-/* Colors */
-
 :root {
-  --primaryColor: hsla(137, 45, 44, 1);
-  --warningColor: hsla(47, 100, 60, 1);
-  --errorColor: hsla(0, 100, 43, 1);
-  --textColor: hsla(0, 0, 22, 1);
-  --neutral: hsla(0, 0, 100, 1);
-  --backgroundColor: hsla(0, 0, 57, 1);
-
-  --HoverColor: hsl(26, 90%, 42%);
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
-  /* --textColor: hsl(240, 1%, 48%); */
-  --whiteColorDeam: hsl(0, 0%, 93%);
-  --greyBg: hsl(0, 0%, 96%);
-  --greyText: rgb(190, 190, 190);
-  --inputColor: hsl(330, 12%, 97%);
-  --shadow: hsl(0, 0%, 53%);
-  --boxShadow: 0 2px 8px 2px rgba(178, 178, 178 0.45);
-
+  --primaryColor: hsl(137, 45, 44, 1);
+  --textColor: hsl(0, 0, 22, 1);
+  --neutral: hsl(0, 0, 100, 1);
+  --backgroundColor: hsl(0, 0, 57, 1);
 }
 
 .aboutUs {
-  /*top left bottom right */
-  padding: 32px 100px 32px 100px;
+  width: 1240px;
+  /* Fixed width */
+  height: 740.02px;
+  /* Fixed height */
+  padding: 0px;
+  /* Padding around the content */
+  gap: 56.4px;
+  /* Gap between elements */
+  opacity: 1;
+  /* Set opacity to 1 for visibility */
+  margin: auto;
+  /* Center the section horizontally */
+  background-color: var(--backgroundColor);
+  /* Background color */
+  color: var(--textColor);
+  /* Text color */
+  font-family: 'Poppins', sans-serif;
+  /* Font family */
+}
+
+/* Container holding the content */
+.aboutUs .container {
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+}
+
+/* Heading */
+.aboutUs h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  /* Center the heading */
+  margin-bottom: 20px;
+  /* Margin below the heading */
+}
+
+/* Paragraph */
+.aboutUs p {
+  font-family: Poppins, sans-serif;
+  font-size: 13.47px;
+  font-weight: 400;
+  line-height: 19.53px;
+
+  width: 846.87px;
+  height: 40px;
+  gap: 0px;
+  opacity: 0px;
+
+  text-align: center;
+  /* Center the paragraph */
+  margin-bottom: 40px;
+  /* Margin below the paragraph */
+}
+
+/* Columns */
+.aboutUs-columns {
+  display: flex;
+  flex-direction: row;
+  /* Align columns next to each other */
+  justify-content: space-between;
+  /* Space between columns */
+  width: 100%;
+  /* Full width */
+}
+
+/* Column 1: Image */
+.column1 {
+  width: 643.63px;
+  /* Fixed width */
+  height: 477.76px;
+  /* Fixed height */
+  opacity: 1;
+  /* Set to 1 for visibility */
+  margin-right: 20px;
+  /* Space between columns */
+}
+
+.column1 img {
+  width: 100%;
+  /* Make image responsive */
+  height: 100%;
+  /* Fill the column */
+  border-radius: 0px;
+  /* Rounded corners */
+  object-fit: cover;
+  /* Cover the area without stretching */
+}
+
+/* Column 2: Text with lists */
+.column2 {
+  width: 475.63px;
+  /* Fixed width */
+  height: 438.85px;
+  /* Fixed height */
+  opacity: 1;
+  /* Set to 1 for visibility */
+  display: flex;
+  flex-direction: column;
+  /* Stack list items vertically */
+  gap: 40.41px;
+  /* Gap between items */
+
+}
+
+/* List styles */
+.lists {
+  list-style-type: circle;
+  /* Remove default list style */
+  padding: 0;
+  /* Remove default padding */
+
+  font-family: Poppins;
+  font-size: 18.52px;
+  font-weight: 400;
+  line-height: 26.85px;
+  text-align: left;
+}
+
+.lists .item {
+  font-size: 18px;
+  /* Adjust font size as needed */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  /* Space between list items */
+
+}
+
+/* Button on the right */
+.aboutUs-button {
+  background-color: hsl(137, 45%, 44%);
+  color: var(--textColor);
+  border: none;
+  width: 133.61px;
+  height: 40.84px;
+  padding: 8.42px 16.84px;
+  gap: 6.73px;
+  border-radius: 8.42px;
+  opacity: 0px;
+  cursor: pointer;
+
+  text-align: center;
+  transition: background-color 0.3s;
+
+}
+
+.aboutUs-button:hover {
+  background-color: hsl(137, 45%, 60%);
+  /* Slightly lighter shade on hover */
+  transition: .3s ease;
 }
