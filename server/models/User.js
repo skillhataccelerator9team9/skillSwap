@@ -10,6 +10,8 @@ const UserSchema = new mongoose.Schema({
   availableDays: { type: [String] },
   skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }],
   reviews: [{ reviewText: String, rating: Number }],
+  verified: { type: Boolean, default: false },
+  verificationToken: { type: String },
 });
 
 module.exports = mongoose.model("User", UserSchema);
