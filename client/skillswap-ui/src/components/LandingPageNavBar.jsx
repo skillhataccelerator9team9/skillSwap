@@ -44,7 +44,7 @@ const LandingPageNavBar = () => {
         </div>
         <div>
           <button className="navbar-button">
-            Contact Us
+            Join our Waitlist
           </button>
         </div>
       </div>
