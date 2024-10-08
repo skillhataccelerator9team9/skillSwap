@@ -1,5 +1,4 @@
-/* Colors */
-
+/* 
 :root {
   --primaryColor: hsla(137, 45, 44, 1);
   --warningColor: hsla(47, 100, 60, 1);
@@ -11,7 +10,6 @@
   --HoverColor: hsl(26, 90%, 42%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 18%);
-  /* --textColor: hsl(240, 1%, 48%); */
   --whiteColorDeam: hsl(0, 0%, 93%);
   --greyBg: hsl(0, 0%, 96%);
   --greyText: rgb(190, 190, 190);
@@ -22,6 +20,266 @@
 }
 
 .mostPolpularSkills {
-  /*top left bottom right */
   padding: 80px 72px;
+} */
+/* 
+:root {
+  --primaryColor: hsl(137, 45, 44, 1);
+  --backgroundColor: hsl(0, 0, 57, 1);
+  --textColor: hsl(0, 0, 22, 1);
+  --neutral: hsl(0, 0, 100, 1);
+}
+
+.mostPopularSkills {
+  text-align: center;
+  padding: 40px;
+}
+
+.mostPopularSkills h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+}
+
+.mostPopularSkills p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  border: 2px solid var(--primaryColor);
+  background-color: transparent;
+  color: var(--primaryColor);
+  transition: background-color 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: var(--primaryColor);
+  color: var(--neutral);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  width: 295px;
+  height: 381.53px;
+  background-image: url('../assets/BannerPhoto.jpeg');
+  
+  background-size: cover;
+  border-radius: 10px 0px 0px 0px;
+  position: relative;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: var(--neutral);
+}
+
+.personInfo {
+  text-align: left;
+}
+
+.name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.skill,
+.city {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.coinIcon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.heartIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.joinUsButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--primaryColor);
+  color: var(--neutral);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+
+:root {
+  --primaryColor: hsl(137, 45, 44, 1);
+  --backgroundColor: hsl(0, 0, 57, 1);
+  --textColor: hsl(0, 0, 22, 1);
+  --neutral: hsl(0, 0, 100, 1);
+}
+
+.mostPopularSkills {
+  text-align: center;
+  padding: 40px;
+}
+
+.mostPopularSkills h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+}
+
+.mostPopularSkills p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid black;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: var(--primaryColor);
+  transition: background-color 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: var(--primaryColor);
+  color: var(--neutral);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* .card {
+  width: 295px;
+  height: 381.53px;
+  background-image: url('../assets/BannerPhoto.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  color: var(--neutral);
+} */
+
+.card {
+  width: 295px;
+  height: 381.53px;
+  background-image: url('../assets/BannerPhoto.jpeg');
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  /* Ensure the child element is positioned relative to the card */
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: var(--neutral);
+}
+
+.personInfo {
+  text-align: left;
+}
+
+.name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.skill,
+.city {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.coinIcon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: var(--neutral);
+}
+
+/* .heartIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--neutral);
+} */
+
+.heartIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--primaryColor);
+  /* Add color if needed */
+}
+
+.joinUsButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--primaryColor);
+  color: var(--neutral);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
 }
