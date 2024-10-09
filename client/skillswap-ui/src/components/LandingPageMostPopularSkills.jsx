@@ -7,10 +7,10 @@ import personImage from '../assets/BannerPhoto.jpeg';
 
 const skillsData = {
   Popular: [
-    { name: 'John Doe', skill: 'Plumbing', city: 'New York', coins: 100 },
-    { name: 'Jane Smith', skill: 'Carpentry', city: 'Toronto', coins: 150 },
-    { name: 'Alice Johnson', skill: 'Electrical', city: 'Vancouver', coins: 200 },
-    { name: 'Mark Lee', skill: 'Painting', city: 'San Francisco', coins: 250 }
+    { name: 'John Doe', skill: 'Plumbing', city: 'New York', coins: 40 },
+    { name: 'Jane Smith', skill: 'Carpentry', city: 'Toronto', coins: 40 },
+    { name: 'Alice Johnson', skill: 'Electrical', city: 'Vancouver', coins: 40 },
+    { name: 'Mark Lee', skill: 'Painting', city: 'San Francisco', coins: 40 }
   ],
   Tech: [
     { name: 'David Clark', skill: 'Coding', city: 'Austin', coins: 300 },
@@ -59,8 +59,8 @@ const LandingPageMostPolpularSkills = () => {
               {/* Person Info */}
               <div className="personInfo">
                 <p className="name">{person.name}</p>
-                <p className="skill">{person.skill}</p>
-                <p className="city">{person.city}</p>
+                {/* <p className="skill">{person.skill}</p> */}
+                {/* <p className="city">{person.city}</p> */}
               </div>
 
               {/* Coins at the bottom-left */}

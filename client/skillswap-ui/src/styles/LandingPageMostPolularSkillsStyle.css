@@ -83,6 +83,8 @@
 
 .cardContent {
   position: absolute;
+  width: 280px;
+  height: 350px;
   bottom: 20px;
   left: 10px;
   color: var(--neutral);
@@ -96,6 +98,8 @@
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 600;
+  bottom: 40px;
+  position: absolute;
 }
 
 .skill,
