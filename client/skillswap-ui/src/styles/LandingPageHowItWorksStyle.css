@@ -1,0 +1,72 @@
+.howItWorksContainer {
+  padding: 50px;
+}
+
+.howItWorksHeading {
+  font-family: 'Poppins';
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.howItWorksSubheading {
+  width: 596px;
+  height: 46px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.howItWorksCards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.howItWorksCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* background-color: rgba(2, 128, 19, 0.1); */
+  /* border-radius: 30px 0px 0px 0px; */
+  width: 500px;
+}
+
+.cardIcon {
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  /* background-color: rgba(2, 128, 19, 1); */
+  background-color: rgba(2, 128, 19, 0.1);
+  border-radius: 10%;
+  margin-bottom: 20px;
+}
+
+.cardHeading {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.cardSubheading {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24.5px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  width: 298px;
+  opacity: 0.8;
+}

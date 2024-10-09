@@ -8,10 +8,11 @@
 } */
 
 :root {
-  --primaryColor: hsl(137, 45%, 44%);
-  --warningColor: hsl(47, 100%, 60%);
-  --errorColor: hsl(0, 100%, 43%);
-  --textColor: hsl(0, 0%, 22%);
+  --primaryColor: rgba(62, 162, 90, 1);
+  /* --warningColor: hsl(47, 100%, 60%);
+  --errorColor: hsl(0, 100%, 43%); */
+  --textColor: rgba(64, 63, 59, 1);
+
   --neutral: hsl(0, 0%, 100%);
   --backgroundColor: hsl(0, 0%, 57%);
 }
@@ -64,7 +65,7 @@
 }
 
 .navbar .navbar-item {
-  color: var(--neutral);
+  color: rgba(64, 63, 59, 1);
   text-decoration: none;
   margin: 0 15px;
   font-family: 'Poppins', sans-serif;

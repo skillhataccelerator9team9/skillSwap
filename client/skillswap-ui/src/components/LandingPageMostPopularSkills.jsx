@@ -80,7 +80,7 @@ const LandingPageMostPolpularSkills = () => {
 
       {/* Join Us Button and Skills Text outside of the cards */}
       <div className="footerSection">
-        <button className="centerButton">Join Us</button>
+        <button className="centerButton">Contact Us</button>
         <p className="skillsCount">120 skills</p>
       </div>
 
