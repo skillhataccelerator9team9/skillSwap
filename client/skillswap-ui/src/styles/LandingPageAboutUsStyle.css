@@ -1,8 +1,10 @@
 :root {
-  --primaryColor: hsl(137, 45, 44, 1);
-  --textColor: hsl(0, 0, 22, 1);
-  --neutral: hsl(0, 0, 100, 1);
-  --backgroundColor: hsl(0, 0, 57, 1);
+  --primaryColor: rgba(62, 162, 90, 1);
+  --textColor: rgb(92, 92, 92);
+
+  --neutral: rgb(255, 255, 255);
+  --backgroundColor: rgb(243, 243, 243, );
+
 }
 
 .aboutUs {
@@ -20,7 +22,7 @@
   /* Center the section horizontally */
   background-color: var(--backgroundColor);
   /* Background color */
-  color: var(--textColor);
+  color: black;
   /* Text color */
   font-family: 'Poppins', sans-serif;
   /* Font family */
@@ -141,7 +143,7 @@
 
 /* Button on the right */
 .aboutUs-button {
-  background-color: hsl(137, 45%, 44%);
+  background-color: var(--primaryColor);
   color: var(--textColor);
   border: none;
   width: 133.61px;

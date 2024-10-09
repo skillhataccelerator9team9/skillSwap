@@ -1,22 +1,20 @@
 :root {
-  --primaryColor: hsl(137, 45, 44, 1);
-  --backgroundColor: hsl(0, 0, 22, 1);
-  --textColor: hsl(0, 0, 100, 1);
-  /* White */
-  --neutral: hsl(0, 0, 100, 1);
-  /* White */
-  --iconColor: hsl(0, 0, 70, 1);
-  /* Light Grey */
+  --primaryColor: rgba(62, 162, 90, 1);
+  --backgroundColor: hsl(0, 0, 22);
+  --textColor: rgba(255, 255, 255, 1);
+  --neutral: rgba(255, 255, 255, 1);
+  --iconColor: rgba(255, 255, 255, 1);
+
 }
 
 .footer {
-  background-color: hsl(137, 45, 44, 1) !important;
+  background: var(--primaryColor);
   color: var(--neutral);
-  padding: 100px 20px;
+  padding: 100px 20px 40px 20px;
 }
 
 .footerColumns {
-  background-color: hsl(137, 45, 44, 1);
+  background: hsl(137, 45, 44, 1);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -63,7 +61,7 @@
 }
 
 .footerColumn ul li:hover {
-  color: var(--primaryColor);
+  color: var(--textColor);
 }
 
 .footer p {
@@ -92,7 +90,7 @@
 
 .icon:hover {
   background-color: hsl(137, 45, 44, 1);
-  color: var(--primaryColor);
+  color: var(--textColor);
 }
 
 /* Footer Bottom */
@@ -137,7 +135,7 @@
 }
 
 .policies a:hover {
-  color: var(--primaryColor);
+  color: var(--textColor);
 }
 
 .policies span {

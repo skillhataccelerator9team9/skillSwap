@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/LandingPageFooterStyle.css';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import logo from '../assets/logo1.png'; // Assuming the logo is in your assets folder
+import logo from '../assets/logo2.png'; // Assuming the logo is in your assets folder
 
 const LandingPageFooter = () => {
   return (
