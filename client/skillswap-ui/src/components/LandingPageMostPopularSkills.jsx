@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import '../styles/LandingPageMostPolularSkillsStyle.css';
 import { FaHeart } from 'react-icons/fa';
-import personImage from '../assets/BannerPhoto.jpeg';
+// import personImage from '../assets/BannerPhoto.jpeg';
 
 const skillsData = {
   Popular: [

@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/LandingPageFooterStyle.css';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { TiSocialFacebook } from "react-icons/ti";
+import { FaTwitter } from "react-icons/fa";
+import { TiSocialInstagram } from "react-icons/ti";
+
 import logo from '../assets/logo2.png'; // Assuming the logo is in your assets folder
 
 const LandingPageFooter = () => {
@@ -15,9 +18,9 @@ const LandingPageFooter = () => {
           </div>
           <p>Lorem ipsum dolor sit amet consectetur. Proin varius arcu mauris habitasse viverra odio massa at.</p>
           <div className="socialIcons">
-            <FaFacebook className="icon" />
-            <FaTwitter className="icon" />
-            <FaInstagram className="icon" />
+            <div className="icon"><TiSocialFacebook /></div>
+            <div className="icon"><FaTwitter /></div>
+            <div className="icon"><TiSocialInstagram /></div>
           </div>
         </div>
 

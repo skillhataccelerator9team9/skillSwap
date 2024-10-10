@@ -6,6 +6,7 @@ import LandingPageBanner from '../components/LandingPageBanner';
 import LandingPageAboutUs from '../components/LandingPageAboutUs';
 import LandingPageMostPolpularSkills from '../components/LandingPageMostPopularSkills';
 import LandingPageHowItWorks from '../components/LandingPageHowItWorks';
+import LandingPageWhyChooseUs from '../components/LandingPageWhyChooseUs';
 import LandingPageFooter from '../components/LandingPageFooter';
 
 function LandingPage () {
@@ -16,7 +17,7 @@ function LandingPage () {
       <LandingPageAboutUs />
       <LandingPageMostPolpularSkills />
       <LandingPageHowItWorks />
-
+      <LandingPageWhyChooseUs />
 
       <LandingPageFooter />
     </div>

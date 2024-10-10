@@ -1,9 +1,10 @@
 :root {
-  --primaryColor: rgba(62, 162, 90, 1);
+  --primaryColor: rgba(2, 128, 19, 1);
   --backgroundColor: hsl(0, 0, 22);
   --textColor: rgba(255, 255, 255, 1);
   --neutral: rgba(255, 255, 255, 1);
-  --iconColor: rgba(255, 255, 255, 1);
+  --iconColor: black;
+  --iconBackgroundColor: white;
 
 }
 
@@ -76,21 +77,24 @@
 
 .socialIcons {
   display: flex;
-  gap: 20px;
+  gap: 1px;
   padding-left: 20px;
 }
 
 .icon {
-
   color: var(--iconColor);
+  background-color: var(--iconBackgroundColor);
+  border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
   transition: color 0.3s ease;
+  width: 30px;
+  height: 30px;
+  rotate: 180deg;
 }
 
 .icon:hover {
-  background-color: hsl(137, 45, 44, 1);
-  color: var(--textColor);
+  color: var(--primaryColor);
 }
 
 /* Footer Bottom */
