@@ -82,8 +82,8 @@
 }
 
 .icon {
-  color: var(--iconColor);
-  background-color: var(--iconBackgroundColor);
+  color: black;
+  background-color: white;
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
