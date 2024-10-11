@@ -18,9 +18,9 @@ const LandingPageFooter = () => {
           </div>
           <p>Lorem ipsum dolor sit amet consectetur. Proin varius arcu mauris habitasse viverra odio massa at.</p>
           <div className="socialIcons">
-            <div className="icon"><TiSocialFacebook /></div>
-            <div className="icon"><FaTwitter /></div>
-            <div className="icon"><TiSocialInstagram /></div>
+            <div className="icon2"><TiSocialFacebook /></div>
+            <div className="icon2"><FaTwitter /></div>
+            <div className="icon2"><TiSocialInstagram /></div>
           </div>
         </div>
 

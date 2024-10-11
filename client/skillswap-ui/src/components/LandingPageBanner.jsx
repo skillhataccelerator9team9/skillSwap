@@ -19,7 +19,7 @@ const LandingPageBanner = () => {
             Join our Waitlist
           </button>
         </div>
-        <div>
+        <div className="mainImage">
           <img src={bannerImage} alt="Banner" className="bannerImage" />
         </div>
 

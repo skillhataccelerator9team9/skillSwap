@@ -55,6 +55,7 @@
   line-height: 80px;
   text-align: left;
   padding-bottom: 15px;
+  color: rgba(1, 45, 7, 1);
 }
 
 .title span {
@@ -75,7 +76,8 @@
 
 /* Button on the right */
 .banner-button {
-  background-color: hsl(137, 45%, 44%);
+  background-color: rgba(2, 128, 19, 1);
+
   /* Should work now */
   color: var(--neutral);
   border: none;
@@ -101,14 +103,21 @@
   transition: .3s ease;
 }
 
+.mainImage {
+  position: relative;
+  padding-top: 40px;
+}
+
 /* Image styling */
 .bannerImage {
   width: 616px;
   height: 574px;
   object-fit: cover;
+  margin-top: 40px;
   /* Ensure the image maintains its aspect ratio */
   border-radius: 63px 0px 0px 0px;
   opacity: 1;
   /* Set to 1 for visibility */
   display: block;
+
 }

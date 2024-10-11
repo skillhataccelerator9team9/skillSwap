@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: hsl(137, 45, 44, 1);
+  --primaryColor: rgba(2, 128, 19, 1);
   --backgroundColor: rgba(243, 243, 243, 1);
   --textColor: rgb(92, 92, 92);
   --neutral: hsl(0, 0, 100, 1);
@@ -53,6 +53,7 @@
 .tab:hover {
   background-color: var(--primaryColor);
   color: var(--neutral);
+  border-bottom: 2px solid var(--primaryColor)
 }
 
 .cardsContainer {
@@ -166,6 +167,17 @@
   border-radius: 4px;
   cursor: pointer;
   font-family: Poppins;
+  width: 133.61px;
+  height: 40.84px;
+  padding: 8.42px 16.84px;
+  gap: 6.73px;
+  border-radius: 8.42px;
+}
+
+.centerButton:hover {
+  background-color: hsl(137, 45%, 60%);
+  /* Slightly lighter shade on hover */
+  transition: .3s ease;
 }
 
 .skillsCount {

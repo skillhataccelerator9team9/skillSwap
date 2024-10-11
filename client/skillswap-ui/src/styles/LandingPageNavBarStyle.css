@@ -8,7 +8,8 @@
 } */
 
 :root {
-  --primaryColor: rgba(62, 162, 90, 1);
+  --primaryColor: rgba(2, 128, 19, 1);
+
   /* --warningColor: hsl(47, 100%, 60%);
   --errorColor: hsl(0, 100%, 43%); */
   --textColor: rgba(64, 63, 59, 1);
@@ -37,10 +38,12 @@
 
 /* target navbar color to activeNavbar */
 .navbar.activeNavbar {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--neutral);
+  border-bottom: 1px solid black;
   /* or any other color you want */
-  box-shadow: 0 2px 8px 2px rgba(178, 178, 178 0.45);
+  /* box-shadow: 0 2px 8px 2px rgba(178, 178, 178 0.45); */
   /* Adding box-shadow for effect */
+  z-index: 1000;
 }
 
 .navbar .navbar-container {
@@ -83,7 +86,8 @@
 
 /* Button on the right */
 .navbar .navbar-button {
-  background-color: hsl(137, 45%, 44%);
+  background-color: rgba(2, 128, 19, 1);
+
   /* Should work now */
   color: var(--neutral);
   border: none;

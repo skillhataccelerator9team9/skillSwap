@@ -77,23 +77,23 @@
 
 .socialIcons {
   display: flex;
-  gap: 1px;
+  gap: 10px;
   padding-left: 20px;
 }
 
-.icon {
+.icon2 {
   color: black;
   background-color: white;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   transition: color 0.3s ease;
-  width: 30px;
-  height: 30px;
-  rotate: 180deg;
+  padding: 5px 5px;
+  width: 25px;
+  height: 25px;
 }
 
-.icon:hover {
+.icon2:hover {
   color: var(--primaryColor);
 }
 
