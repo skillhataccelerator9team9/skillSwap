@@ -14,7 +14,7 @@
   /* Center content vertically */
   justify-content: space-between;
   /* Space between text and image */
-  padding: 200px 100px;
+  padding: 150px 100px;
   /* Adjust padding as needed */
   background-color: var(--backgroundColor);
   /* Use your background color */
@@ -36,6 +36,7 @@
   max-width: 600px;
   font-family: Poppins, sans-serif;
   text-align: left;
+  padding-top: 70px;
 }
 
 .bannerText h5 {
@@ -105,19 +106,17 @@
 
 .mainImage {
   position: relative;
-  padding-top: 40px;
+  padding-top: 50px;
 }
 
-/* Image styling */
 .bannerImage {
   width: 616px;
   height: 574px;
   object-fit: cover;
   margin-top: 40px;
-  /* Ensure the image maintains its aspect ratio */
+  object-position: center 30%;
   border-radius: 63px 0px 0px 0px;
   opacity: 1;
-  /* Set to 1 for visibility */
   display: block;
 
 }

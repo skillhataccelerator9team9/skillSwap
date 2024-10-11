@@ -75,7 +75,7 @@
 .card {
   width: 295px;
   height: 381.53px;
-  background-image: url('../assets/BannerPhoto.jpeg');
+  /* background-image: url('../assets/BannerPhoto.jpeg'); */
   background-size: cover;
   border-radius: 10px;
   position: relative;
@@ -91,23 +91,54 @@
   color: var(--neutral);
 }
 
+.imageLayout {
+  width: 100%;
+  height: 100%;
+  /* Adjust based on the image height you need */
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* opacity: 50%; */
+}
+
 .personInfo {
-  text-align: left;
+  /* text-align: left; */
+  padding: 10px;
 }
 
 .name {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  bottom: 40px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+
+
+  bottom: 50px;
   position: absolute;
 }
 
-.skill,
+.skill {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 11.74px;
+
+
+  bottom: 30px;
+  position: absolute;
+}
+
 .city {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+
+
+  bottom: 10px;
+  position: absolute;
 }
 
 .coinIcon {
@@ -133,7 +164,8 @@
   top: 10px;
   right: 10px;
   font-size: 24px;
-  color: var(--primaryColor);
+  /* color: var(--primaryColor); */
+  color: rgba(255, 185, 4, 1);
   /* Add color if needed */
 }
 
