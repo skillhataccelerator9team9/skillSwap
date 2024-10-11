@@ -7,6 +7,7 @@ import LandingPageAboutUs from '../components/LandingPageAboutUs';
 import LandingPageMostPolpularSkills from '../components/LandingPageMostPopularSkills';
 import LandingPageHowItWorks from '../components/LandingPageHowItWorks';
 import LandingPageWhyChooseUs from '../components/LandingPageWhyChooseUs';
+import LandingPageCustomerFeedback from '../components/LandingPageCustomerFeedback';
 import LandingPageFooter from '../components/LandingPageFooter';
 
 function LandingPage () {
@@ -18,6 +19,7 @@ function LandingPage () {
       <LandingPageMostPolpularSkills />
       <LandingPageHowItWorks />
       <LandingPageWhyChooseUs />
+      <LandingPageCustomerFeedback />
 
       <LandingPageFooter />
     </div>
