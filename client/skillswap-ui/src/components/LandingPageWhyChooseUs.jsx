@@ -47,7 +47,7 @@ const LandingPageWhyChooseUs = () => {
       <div className="whyChooseUsContent">
         {/* Left column: Image */}
         <div className="leftColumn">
-          <img src={image1} alt="Why Choose Us" className="imageStyle" />
+          <img src={image1} alt="Why Choose Us" />
         </div>
 
         {/* Right column: Rows of icons, headers, and subheaders */}

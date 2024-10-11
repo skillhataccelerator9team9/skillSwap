@@ -14,7 +14,7 @@ function LandingPageAboutUs () {
         </div>
         <div className='aboutUs-columns'>
           <div className='column1'>
-            <img src={img1} alt="image1" />
+            <img src={img1} alt="image1" className="imageColumn" />
           </div>
           <div className='column2'>
             <ul className="lists">

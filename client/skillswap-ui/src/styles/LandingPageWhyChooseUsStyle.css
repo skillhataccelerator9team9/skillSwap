@@ -33,7 +33,30 @@
   padding: 40px 100px;
 }
 
-.leftColumn .imageStyle {
+/* Column 1: Image */
+.leftColumn {
+  width: 643.63px;
+  /* Fixed width */
+  height: 477.76px;
+  /* Fixed height */
+  opacity: 1;
+  /* Set to 1 for visibility */
+  margin-right: 20px;
+  /* Space between columns */
+}
+
+.leftColumn img {
+  width: 100%;
+  /* Make image responsive */
+  height: 100%;
+  /* Fill the column */
+  border-radius: 0px;
+  /* Rounded corners */
+  object-fit: cover;
+  /* Cover the area without stretching */
+}
+
+/* .leftColumn .imageStyle {
   width: 637.82px;
   height: 595px;
   top: 3546px;
@@ -41,7 +64,7 @@
   gap: 0px;
   opacity: 0px;
 
-}
+} */
 
 .rightColumn {
   display: flex;
