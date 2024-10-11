@@ -3,32 +3,36 @@
 import React, { useState } from 'react';
 import '../styles/LandingPageMostPolularSkillsStyle.css';
 import { FaHeart } from 'react-icons/fa';
-// import personImage from '../assets/BannerPhoto.jpeg';
+import popular1 from '../assets/popular1.png';
+import popular2 from '../assets/popular2.png';
+import popular3 from '../assets/popular3.png';
+import popular4 from '../assets/popular4.png';
+
 
 const skillsData = {
   Popular: [
-    { name: 'John Doe', skill: 'Plumbing', city: 'New York', coins: 40 },
-    { name: 'Jane Smith', skill: 'Carpentry', city: 'Toronto', coins: 40 },
-    { name: 'Alice Johnson', skill: 'Electrical', city: 'Vancouver', coins: 40 },
-    { name: 'Mark Lee', skill: 'Painting', city: 'San Francisco', coins: 40 }
+    { name: 'John Doe', skill: 'Photographer', city: 'New York', coins: 40, image: popular1 },
+    { name: 'Jane Smith', skill: 'Carpentry', city: 'Toronto', coins: 45, image: popular2 },
+    { name: 'Alice Johnson', skill: 'Electrical', city: 'Vancouver', coins: 140, image: popular3 },
+    { name: 'Mark Lee', skill: 'Painting', city: 'San Francisco', coins: 302, image: popular4 }
   ],
   Tech: [
-    { name: 'David Clark', skill: 'Coding', city: 'Austin', coins: 300 },
-    { name: 'Sophia White', skill: 'Web Development', city: 'Chicago', coins: 350 },
-    { name: 'Mason Green', skill: 'Cybersecurity', city: 'Boston', coins: 400 },
-    { name: 'Eva Brown', skill: 'Cloud Engineering', city: 'Seattle', coins: 450 }
+    { name: 'David Clark', skill: 'Coding', city: 'Austin', coins: 30, image: popular4 },
+    { name: 'Sophia White', skill: 'Web Development', city: 'Chicago', coins: 350, image: popular3 },
+    { name: 'Mason Green', skill: 'Cybersecurity', city: 'Boston', coins: 400, image: popular2 },
+    { name: 'Eva Brown', skill: 'Cloud Engineering', city: 'Seattle', coins: 450, image: popular1 }
   ],
   Cleaning: [
-    { name: 'Jacob Wilson', skill: 'House Cleaning', city: 'Miami', coins: 500 },
-    { name: 'Olivia Martinez', skill: 'Window Cleaning', city: 'Dallas', coins: 550 },
-    { name: 'Emily Harris', skill: 'Carpet Cleaning', city: 'Denver', coins: 600 },
-    { name: 'Michael Young', skill: 'Office Cleaning', city: 'Las Vegas', coins: 650 }
+    { name: 'Jacob Wilson', skill: 'House Cleaning', city: 'Miami', coins: 500, image: popular3 },
+    { name: 'Olivia Martinez', skill: 'Window Cleaning', city: 'Dallas', coins: 550, image: popular2 },
+    { name: 'Emily Harris', skill: 'Carpet Cleaning', city: 'Denver', coins: 600, image: popular4 },
+    { name: 'Michael Young', skill: 'Office Cleaning', city: 'Las Vegas', coins: 650, image: popular1 }
   ],
   DayCare: [
-    { name: 'Amelia King', skill: 'Child Care', city: 'Los Angeles', coins: 700 },
-    { name: 'Liam Scott', skill: 'Elderly Care', city: 'Phoenix', coins: 750 },
-    { name: 'Charlotte Adams', skill: 'Pet Care', city: 'Houston', coins: 800 },
-    { name: 'Benjamin Hall', skill: 'Baby Sitting', city: 'Orlando', coins: 850 }
+    { name: 'Amelia King', skill: 'Child Care', city: 'Los Angeles', coins: 700, image: popular4 },
+    { name: 'Liam Scott', skill: 'Elderly Care', city: 'Phoenix', coins: 750, image: popular1 },
+    { name: 'Charlotte Adams', skill: 'Pet Care', city: 'Houston', coins: 800, image: popular2 },
+    { name: 'Benjamin Hall', skill: 'Baby Sitting', city: 'Orlando', coins: 850, image: popular3 }
   ]
 };
 
@@ -56,11 +60,14 @@ const LandingPageMostPolpularSkills = () => {
         {skillsData[activeTab].map((person, index) => (
           <div className="card" key={index}>
             <div className="cardContent">
+              {/* Display the person's image */}
+              <img src={person.image} alt={`${person.name}'s profile`} className="imageLayout" />
+
               {/* Person Info */}
               <div className="personInfo">
                 <p className="name">{person.name}</p>
-                {/* <p className="skill">{person.skill}</p> */}
-                {/* <p className="city">{person.city}</p> */}
+                <p className="skill">{person.skill}</p>
+                <p className="city">{person.city}</p>
               </div>
 
               {/* Coins at the bottom-left */}
