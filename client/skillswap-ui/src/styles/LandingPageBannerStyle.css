@@ -1,10 +1,8 @@
 :root {
-  --primaryColor: hsl(137, 45, 44, 1);
-  --warningColor: hsl(47, 100, 60, 1);
-  --errorColor: hsl(0, 100, 43, 1);
-  --textColor: hsl(0, 0, 22, 1);
-  --neutral: hsl(0, 0, 100, 1);
-  --backgroundColor: hsl(0, 0, 57, 1);
+  --primaryColor: rgba(2, 128, 19, 1);
+  --textColor: rgba(64, 63, 59, 1);
+  --neutral: rgba(255, 255, 255, 1);
+  --backgroundColor: hsl(0, 0%, 57%);
 }
 
 /* Container for the whole banner */
