@@ -38,7 +38,7 @@ const LandingPageCustomerFeedback = () => {
               <div className="leftSection">
                 <div className="customerInfo">
                   <div className="customerPhoto">
-                    <img src={customer1} alt="customer image" className="customerImage" />
+                    <img src={customer1} alt="" className="customerImage" />
                   </div>
                   <div className="customerNameCity">
                     <p className="customerName">{customer.name}</p>
