@@ -20,7 +20,6 @@ function LandingPage () {
       <LandingPageHowItWorks />
       <LandingPageWhyChooseUs />
       <LandingPageCustomerFeedback />
-
       <LandingPageFooter />
     </div>
   )
