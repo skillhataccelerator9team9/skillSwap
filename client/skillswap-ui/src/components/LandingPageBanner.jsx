@@ -4,7 +4,7 @@ import bannerImage from '../assets/BannerPhoto.jpeg'; // Update the path to your
 
 const LandingPageBanner = () => {
   return (
-    <section className='banner'>
+    <section id="home" className='banner'>
       <div className="secContainer container">
         <div className="bannerText">
           <h5>Trade Skills</h5>

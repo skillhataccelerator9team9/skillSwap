@@ -6,7 +6,7 @@ import img1 from '../assets/aboutUs1.jpeg'
 
 function LandingPageAboutUs () {
   return (
-    <div className='aboutUs'>
+    <div id="about" className='aboutUs'>
       <div className='container'>
         <div className='aboutUs-text'>
           <h1>About Us</h1>

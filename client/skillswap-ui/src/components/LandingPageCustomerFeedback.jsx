@@ -26,7 +26,7 @@ const customerFeedbackData = [
 
 const LandingPageCustomerFeedback = () => {
   return (
-    <div className="customerFeedbackSection">
+    <div id="testimonial" className="customerFeedbackSection">
       <h1 className="feedbackHeader">Trusted by Thousands of Happy Customers</h1>
       <p className="feedbackSubheader">Don’t take our words for it, hear from our trusted user is</p>
 

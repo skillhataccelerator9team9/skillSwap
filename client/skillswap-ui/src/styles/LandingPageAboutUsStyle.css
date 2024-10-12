@@ -12,7 +12,8 @@
   /* Fixed width */
   height: 740.02px;
   /* Fixed height */
-  padding: 0px;
+  padding: 150px 0px 150px 0px;
+  /* Added padding-top */
   /* Padding around the content */
   gap: 56.4px;
   /* Gap between elements */
