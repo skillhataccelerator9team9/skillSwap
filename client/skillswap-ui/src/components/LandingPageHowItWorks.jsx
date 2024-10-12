@@ -6,7 +6,7 @@ import { TiLocation } from "react-icons/ti";
 
 const LandingPageHowItWorks = () => {
   return (
-    <div className="howItWorksContainer">
+    <div id="how-it-works" className="howItWorksContainer">
       <h1 className="howItWorksHeading">How it works</h1>
       <p className="howItWorksSubheading">
         Lorem ipsum dolor sit amet consectetur. Porttitor amet sed et consectetur tempus malesuada dictum.

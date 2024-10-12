@@ -8,7 +8,8 @@
 .mostPopularSkills {
   background-color: rgba(243, 243, 243, 1);
   text-align: center;
-  padding: 60px;
+  margin-top: 150px;
+  padding-top: 60px;
 }
 
 .mostPopularSkills h1 {

@@ -38,7 +38,7 @@ const LandingPageWhyChooseUs = () => {
   ];
 
   return (
-    <div className="whyChooseUsContainer">
+    <div id="why-choose-us" className="whyChooseUsContainer">
       <h1 className="whyChooseUsHeader">Why choose us</h1>
       <p className="whyChooseUsSubheader">
         Lorem ipsum dolor sit amet consectetur. Integer consequat ipsum nam eget turpis morbi. A turpis nunc est etiam in sed aenean.
