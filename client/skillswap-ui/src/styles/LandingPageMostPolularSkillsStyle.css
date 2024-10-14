@@ -9,6 +9,8 @@
   background-color: rgba(243, 243, 243, 1);
   text-align: center;
   margin-top: 150px;
+  padding-left: 80px;
+  padding-right: 80px;
   padding-top: 60px;
 }
 
@@ -137,7 +139,6 @@
   line-height: 15px;
   letter-spacing: -0.02em;
 
-
   bottom: 10px;
   position: absolute;
 }
@@ -203,8 +204,10 @@
   width: 133.61px;
   height: 40.84px;
   padding: 8.42px 16.84px;
+  align-items: center;
   gap: 6.73px;
   border-radius: 8.42px;
+
 }
 
 .centerButton:hover {
