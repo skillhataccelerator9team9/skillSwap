@@ -4,8 +4,8 @@
 }
 
 .feedbackHeader {
-  width: 1010px;
-  height: 48px;
+  /* width: 1010px;
+  height: 48px; */
   margin: 0 auto;
   font-family: Poppins;
   font-size: 48px;
@@ -13,6 +13,7 @@
   line-height: 48px;
   letter-spacing: -0.01em;
   color: rgba(1, 45, 7, 1);
+
 }
 
 .feedbackSubheader {

@@ -23,7 +23,7 @@
   /* Center the section horizontally */
   background-color: var(--backgroundColor);
   /* Background color */
-  color: black;
+  color: rgba(1, 45, 7, 1);
   /* Text color */
   font-family: 'Poppins', sans-serif;
   /* Font family */
@@ -40,6 +40,7 @@
 
 /* Heading */
 .aboutUs h1 {
+  color: rgba(1, 45, 7, 1);
   font-family: Poppins, sans-serif;
   font-size: 48px;
   font-weight: 600;
