@@ -44,7 +44,10 @@ const LandingPageNavBar = () => {
         </div>
         <div>
           <button className="navbar-button">
-            Join our Waitlist
+            Sign In
+          </button>
+          <button className="navbar-button">
+            Sign Up
           </button>
         </div>
       </div>
