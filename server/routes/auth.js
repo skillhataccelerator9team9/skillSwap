@@ -85,6 +85,31 @@ router.post(
   }
 );
 
+// @route   GET /api/auth/verify-email
+// @desc    Verify user's email
+router.get("/verify-email", async (req, res) => {
+  const { token } = req.query;
+
+  try {
+    const user = await User.findOne({ verificationToken: token });
+
+    if (!user) {
+      return res.status(400).json({ msg: "Invalid or expired token" });
+    }
+
+    user.verificationToken = null; // Clear the verification token after successful verification
+    user.verified = true; // Mark the user as verified
+    await user.save();
+
+    res
+      .status(200)
+      .json({ msg: "Email verified successfully. You can now log in." });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 // @route   POST /api/auth/login
 // @desc    Authenticate user & get token
 router.post(
