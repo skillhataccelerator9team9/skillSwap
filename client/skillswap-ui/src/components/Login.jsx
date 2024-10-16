@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import '../styles/login.css'
 
@@ -8,14 +8,29 @@ const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Login = () => {
 
+  const location = useLocation();  // Hook to access passed state
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [buttonName, setButtonName] = useState('Sign Up');
   const [message1, setMessage1] = useState('Already have an account?');
   const [message2, setMessage2] = useState('Sign In');
-  const [message3, setMessage3] = useState('successfully_signin');
+  //const [message3, setMessage3] = useState('successfully_signin');
   const navigate = useNavigate();  // Hook for navigation
+
+  // Use the passed state to set the initial form mode
+  useEffect(() => {
+    if (location.state && location.state.mode === 'signIn') {
+      setButtonName('Sign In');
+      setMessage1('Need an account?');
+      setMessage2('Sign Up');
+    } else {
+      setButtonName('Sign Up');
+      setMessage1('Already have an account?');
+      setMessage2('Sign In');
+    }
+  }, [location.state]);
 
   const switchLogin = (e) => {
     e.preventDefault();
@@ -49,13 +64,13 @@ const Login = () => {
         //const res = await axios.post("http://localhost:80/api/auth/login", body, config);
 
         console.log(res.data); // This will contain the JWT token
-        alert("Login successful!");
+        alert("Signin successful!");
 
         setUsername('');
         setEmail('');
         setPassword('');
 
-        navigate('/home');
+        navigate('/UserScreen');
 
 
       } catch (err) {

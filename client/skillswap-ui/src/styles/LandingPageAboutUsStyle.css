@@ -3,7 +3,7 @@
   --textColor: rgb(92, 92, 92);
 
   --neutral: rgb(255, 255, 255);
-  --backgroundColor: rgb(243, 243, 243, );
+  --backgroundColor: rgba(255, 255, 255, 1);
 
 }
 
@@ -21,7 +21,7 @@
   /* Set opacity to 1 for visibility */
   margin: auto;
   /* Center the section horizontally */
-  background-color: var(--backgroundColor);
+  background-color: var(--neutral);
   /* Background color */
   color: rgba(1, 45, 7, 1);
   /* Text color */

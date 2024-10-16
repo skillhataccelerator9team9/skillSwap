@@ -14,7 +14,7 @@
   /* Space between text and image */
   padding: 150px 100px 0px 100px;
   /* Adjust padding as needed */
-  background-color: var(--backgroundColor);
+  background-color: var(--neutral);
   /* Use your background color */
   /* margin-top: 80px; */
   /* Space to push banner below the navbar */

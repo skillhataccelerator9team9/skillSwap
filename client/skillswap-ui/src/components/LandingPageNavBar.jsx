@@ -1,11 +1,13 @@
 
 import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import logo1 from '../assets/logo1.png'; // Importing the logo image
 import '../styles/LandingPageNavBarStyle.css'
 
 const LandingPageNavBar = () => {
 
   const [transparent, setTransparent] = useState('navbar')
+  const navigate = useNavigate()  // Hook to navigate to another page
 
   const addBackground = () => {
     if (window.scrollY >= 15) {
@@ -28,6 +30,10 @@ const LandingPageNavBar = () => {
     };
   }, []); // Empty array ensures this effect runs only once
 
+  // Function to navigate and pass state for "Sign In" or "Sign Up"
+  const handleLogin = (mode) => {
+    navigate('/loginPage', { state: { mode } });  // Pass "signIn" or "signUp"
+  };
 
   return (
     <nav className={transparent}>
@@ -43,10 +49,10 @@ const LandingPageNavBar = () => {
           <a href="#testimonial" className="navbar-item">Testimonial</a>
         </div>
         <div>
-          <button className="navbar-button">
+          <button className="navbar-button" onClick={() => handleLogin('signIn')}>
             Sign In
           </button>
-          <button className="navbar-button">
+          <button className="navbar-button" onClick={() => handleLogin('signUp')}>
             Sign Up
           </button>
         </div>
