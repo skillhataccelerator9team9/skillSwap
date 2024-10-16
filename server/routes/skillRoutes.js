@@ -51,6 +51,25 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
+// Get all skills for a specific user by user ID
+router.get("/user/:userId", authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId).populate({
+      path: "skills",
+      model: "Skill",
+    });
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    res.json(user.skills);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 // Update a skill
 router.put("/update/:id", authMiddleware, async (req, res) => {
   const { skillName, description, value, sampleWorkImage } = req.body;
