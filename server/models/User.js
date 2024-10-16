@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   profileImage: { type: String },
   location: { type: String },
   availableDays: { type: [String] },
+
   skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }],
   reviews: [{ reviewText: String, rating: Number }],
   verified: { type: Boolean, default: false },

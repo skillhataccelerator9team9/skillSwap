@@ -1,3 +1,5 @@
+const crypto = require("crypto");
+const nodemailer = require("nodemailer");
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -9,8 +11,15 @@ const User = require("../models/User");
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-// @route   POST /api/auth/signup
-// @desc    Register a new user
+// Create transporter for nodemailer
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.EMAIL_USER, // Your email
+    pass: process.env.EMAIL_PASS, // Your app password
+  },
+});
+
 router.post(
   "/signup",
   [
@@ -34,11 +43,13 @@ router.post(
       if (user) {
         return res.status(400).json({ msg: "User already exists" });
       }
+      const verificationToken = crypto.randomBytes(32).toString("hex");
 
       user = new User({
         username,
         email,
         password,
+        verificationToken,
       });
 
       // Encrypt password
@@ -46,23 +57,6 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
-
-      // Return JWT token
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
-
-      jwt.sign(
-        payload,
-        process.env.JWT_SECRET,
-        { expiresIn: "1h" },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
