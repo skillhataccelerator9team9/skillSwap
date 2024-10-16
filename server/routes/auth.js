@@ -57,6 +57,27 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
+      // Create verification link
+      const verifyURL = `${process.env.CLIENT_URL}/verify-email?token=${verificationToken}`;
+
+      // Send verification email
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: user.email,
+        subject: "Please verify your email",
+        html: `<p>Click the link to verify your email: <a href="${verifyURL}">${verifyURL}</a></p>`,
+      };
+
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.error("Error sending email: ", err);
+          return res.status(500).send("Error sending verification email.");
+        }
+        console.log("Verification email sent: ", info.response);
+        res.status(200).json({
+          msg: "Signup successful! Please verify your email.",
+        });
+      });
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
