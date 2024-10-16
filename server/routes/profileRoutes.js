@@ -3,7 +3,9 @@ const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 const User = require("../models/User");
 
-// Update user profile
+// @route   PUT /api/profile/update
+// @desc    Update profile of the authenticated user
+
 router.put("/update", authMiddleware, async (req, res) => {
   const { profileImage, location, availableDays } = req.body;
 
@@ -21,7 +23,8 @@ router.put("/update", authMiddleware, async (req, res) => {
   }
 });
 
-// Get user information by email
+// @route   GET /api/profile/userByEmail/:email
+// @desc    Get user information by email
 router.get("/userByEmail/:email", authMiddleware, async (req, res) => {
   try {
     const user = await User.findOne({ email: req.params.email });
