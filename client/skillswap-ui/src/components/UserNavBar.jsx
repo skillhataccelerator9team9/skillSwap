@@ -1,8 +1,8 @@
 
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
-import Cookies from 'js-cookie';
 import logo1 from '../assets/logo1.png'; // Importing the logo image
+
 import '../styles/UserNavBarStyle.css'
 
 const UserNavBar = () => {
@@ -27,10 +27,10 @@ const UserNavBar = () => {
     window.addEventListener('scroll', addBackground);
 
     // Fetch the username from cookies when the component loads
-    const storedUserName = Cookies.get('user');
-    if (storedUserName) {
-      setUserName(storedUserName);
-    }
+    // const storedUserName = Cookies.get('user');
+    // if (storedUserName) {
+    //   setUserName(storedUserName);
+    // }
 
     return () => {
       window.removeEventListener('scroll', addBackground); // Cleanup listener on component unmount
@@ -38,8 +38,6 @@ const UserNavBar = () => {
   }, []); // Empty array ensures this effect runs only once
 
   const handleSignOut = (mode) => {
-    Cookies.remove('token');  // Remove token from cookies
-    Cookies.remove('user');   // Remove user data from cookies
     navigate('/');  // Redirect to the login page
   };
 
