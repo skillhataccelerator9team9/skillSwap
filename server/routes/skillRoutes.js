@@ -4,7 +4,8 @@ const authMiddleware = require("../middleware/authMiddleware");
 const Skill = require("../models/Skill");
 const User = require("../models/User");
 
-// Create a new skill
+// @route   POST /api/skills/add
+// @desc    Create a new skill for the authenticated user
 router.post("/add", authMiddleware, async (req, res) => {
   const { skillName, description, value, sampleWorkImage } = req.body;
 
@@ -40,7 +41,8 @@ router.post("/add", authMiddleware, async (req, res) => {
   }
 });
 
-// Get all skills for a user
+// @route   GET /api/skills
+// @desc    Get all skills for the authenticated user
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate({
@@ -55,7 +57,8 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
-// Get all skills for a specific user by user ID
+// @route   GET /api/skills/user/:userId
+// @desc    Get all skills for a specific user by user ID
 router.get("/user/:userId", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.params.userId).populate({
@@ -74,7 +77,9 @@ router.get("/user/:userId", authMiddleware, async (req, res) => {
   }
 });
 
-// Update a skill
+// @route   PUT /api/skills/update/:id
+// @desc    Update a skill by skill ID
+
 router.put("/update/:id", authMiddleware, async (req, res) => {
   const { skillName, description, value, sampleWorkImage } = req.body;
 
@@ -92,7 +97,9 @@ router.put("/update/:id", authMiddleware, async (req, res) => {
   }
 });
 
-// Delete a skill
+// @route   DELETE /api/skills/delete/:id
+// @desc    Delete a skill by skill ID
+
 router.delete("/delete/:id", authMiddleware, async (req, res) => {
   try {
     await Skill.findByIdAndRemove(req.params.id);
