@@ -132,18 +132,19 @@ router.post(
       if (!user) {
         return res.status(400).json({ msg: "Invalid credentials" });
       }
-      // Check if the user's email is verified
+      // If the user signed up with Google, bypass email verification
+      if (user.password === "") {
+        // Allow Google users to bypass the verification check, as they authenticated through Google
+        return res.status(400).json({
+          msg: "This account was created using Google. Please sign in with Google.",
+        });
+      }
+
+      // Check if the user's email is verified (only for non-Google users)
       if (!user.verified) {
         return res
           .status(400)
           .json({ msg: "Please verify your email before logging in." });
-      }
-
-      // Check if the user signed up with Google
-      if (!user.password) {
-        return res.status(400).json({
-          msg: "This account was created using Google. Please sign in with Google.",
-        });
       }
 
       const isMatch = await bcrypt.compare(password, user.password);
