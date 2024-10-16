@@ -132,6 +132,12 @@ router.post(
       if (!user) {
         return res.status(400).json({ msg: "Invalid credentials" });
       }
+      // Check if the user's email is verified
+      if (!user.verified) {
+        return res
+          .status(400)
+          .json({ msg: "Please verify your email before logging in." });
+      }
 
       // Check if the user signed up with Google
       if (!user.password) {
