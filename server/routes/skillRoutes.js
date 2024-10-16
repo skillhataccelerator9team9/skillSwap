@@ -24,6 +24,8 @@ router.post("/add", authMiddleware, async (req, res) => {
     });
     await newSkill.save();
 
+    console.log("New skill created:", newSkill);
+
     // Add the skill reference to the user's profile
     const user = await User.findById(req.user.id);
     user.skills.push(newSkill._id);
