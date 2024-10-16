@@ -165,7 +165,17 @@ router.post(
         { expiresIn: "1h" },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({
+            token,
+            user: {
+              id: user.id,
+              username: user.username,
+              email: user.email,
+              profileImage: user.profileImage,
+              points: user.points,
+              skills: user.skills,
+            },
+          });
         }
       );
     } catch (err) {
