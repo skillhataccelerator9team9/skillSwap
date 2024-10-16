@@ -1,0 +1,121 @@
+:root {
+  --primaryColor: rgba(2, 128, 19, 1);
+  --textColor: rgba(64, 63, 59, 1);
+  --neutral: rgba(255, 255, 255, 1);
+  --backgroundColor: hsl(0, 0%, 57%);
+}
+
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: var(--neutral);
+  padding: 32px 100px 32px 100px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* target navbar color to activeNavbar */
+.navbar.activeNavbar {
+  background-color: var(--neutral);
+  border-bottom: 1px solid black;
+  /* or any other color you want */
+  /* box-shadow: 0 2px 8px 2px rgba(178, 178, 178 0.45); */
+  /* Adding box-shadow for effect */
+  z-index: 1000;
+}
+
+.navbar .navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo on the left */
+.navbar .navbar-logo {
+  width: 102.24px;
+  height: 64px;
+
+}
+
+/* Center the navbar items */
+.navbar .navbar-items {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar .navbar-item {
+  color: rgba(64, 63, 59, 1);
+  text-decoration: none;
+  margin: 0 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.navbar .navbar-item:hover {
+  color: var(--primaryColor);
+  /* HSL primary color for hover */
+}
+
+.nav-userName-signOut {
+  display: flex;
+  justify-content: right;
+  flex-grow: 1;
+}
+
+.navbar-button {
+  background-color: rgba(2, 128, 19, 1);
+  color: var(--neutral);
+  border: none;
+  width: 140px;
+  height: 42px;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* line-height: 28px; */
+  text-align: center;
+  transition: background-color 0.3s;
+  opacity: 1;
+  /* Set to 1 for visibility */
+  z-index: 1001
+}
+
+.navbar-button:hover {
+  background-color: hsl(137, 45%, 60%);
+  /* Slightly lighter shade on hover */
+  transition: .3s ease;
+}
+
+.nav-userName-signOut {
+  display: flex;
+  align-items: center;
+  /* Vertically center the items */
+  gap: 10px;
+  /* Add some space between the name and the button */
+}
+
+.nav-userName-signOut h1 {
+  color: rgba(2, 128, 19, 1);
+  margin: 0;
+  /* Remove default margin from the h1 tag */
+  font-size: 18px;
+  /* Adjust the font size as per your design */
+}

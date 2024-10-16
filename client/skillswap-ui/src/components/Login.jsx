@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate, useLocation } from 'react-router-dom';
+// import Cookies from 'js-cookie';
 
 import '../styles/login.css'
 
@@ -41,8 +42,11 @@ const Login = () => {
     console.log("Switch login");
   };
 
+
+
   const loginFunction = async (e) => {
     e.preventDefault();
+
 
     if (buttonName === "Sign In") {
       console.log("You are in Sign In");
@@ -70,7 +74,7 @@ const Login = () => {
         setEmail('');
         setPassword('');
 
-        navigate('/UserScreen');
+        navigate('/userPage');
 
 
       } catch (err) {
