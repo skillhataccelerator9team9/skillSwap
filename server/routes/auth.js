@@ -97,8 +97,8 @@ router.get("/verify-email", async (req, res) => {
       return res.status(400).json({ msg: "Invalid or expired token" });
     }
 
-    user.verificationToken = null; // Clear the verification token after successful verification
     user.verified = true; // Mark the user as verified
+    user.verificationToken = null; // Clear the verification token after successful verification
     await user.save();
 
     res
