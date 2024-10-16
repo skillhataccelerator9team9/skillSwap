@@ -9,7 +9,9 @@ const UserSchema = new mongoose.Schema({
   location: { type: String },
   availableDays: { type: [String] },
 
-  skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }],
+  skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }], // Services provided by the user
+  requestedServices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }], // Services requested by the user
+
   reviews: [{ reviewText: String, rating: Number }],
   verified: { type: Boolean, default: false },
   verificationToken: { type: String },
