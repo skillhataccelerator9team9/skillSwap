@@ -31,6 +31,8 @@ router.post("/add", authMiddleware, async (req, res) => {
     user.skills.push(newSkill._id);
     await user.save();
 
+    console.log(`Skill ${newSkill._id} added to user ${req.user.id}`);
+
     res.status(201).json(newSkill);
   } catch (err) {
     console.error(err.message);
