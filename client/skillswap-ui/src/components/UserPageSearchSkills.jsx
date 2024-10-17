@@ -2,7 +2,6 @@ import React from 'react'
 
 import '../styles/UserPageSearchSkillsStyle.css'
 
-import img1 from '../assets/aboutUs1.jpeg'
 
 function UserPageSearchSkills () {
   return (
