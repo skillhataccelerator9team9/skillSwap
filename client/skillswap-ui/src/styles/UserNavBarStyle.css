@@ -52,6 +52,7 @@
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  text-decoration: none;
 }
 
 .navbar .navbar-item {
@@ -64,11 +65,37 @@
   line-height: 28px;
   text-align: left;
   transition: color 0.3s;
+  list-style: none;
 }
 
 .navbar .navbar-item:hover {
   color: var(--primaryColor);
   /* HSL primary color for hover */
+}
+
+.navLink {
+  color: var(--blackColor);
+  padding: 0 .45rem;
+  font-size: .9rem;
+  font-weight: 600;
+  margin: 0rem 0.2rem;
+  text-decoration: none;
+
+}
+
+.navLink:hover {
+  color: var(--primaryColor);
+  text-decoration: none;
+}
+
+/* for active nav link */
+.activeNavLink {
+  padding: 0 .45rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--primaryColor);
+  margin: 0rem 0.2rem;
+  text-decoration: none;
 }
 
 .nav-userName-signOut {

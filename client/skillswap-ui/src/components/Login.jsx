@@ -63,11 +63,10 @@ const Login = () => {
 
         console.log({ apiBaseUrl });
 
-        const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
+        // const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
+        // console.log(res.data);
 
-        //const res = await axios.post("http://localhost:80/api/auth/login", body, config);
-
-        console.log(res.data); // This will contain the JWT token
+        // This will contain the JWT token
         alert("Signin successful!");
 
         setUsername('');
@@ -75,13 +74,11 @@ const Login = () => {
         setPassword('');
 
         navigate('/userPage');
-
-
       } catch (err) {
         console.error(err.response.data);
         console.error('Error:', err);  // Check if there’s an error in the request
         console.error('Error response:', err.response); // Check if the response is being sent by backend
-        alert("Login failed. Please check your credentials.");
+        //alert("Login failed. Please check your credentials.");
       }
 
     }
@@ -100,16 +97,17 @@ const Login = () => {
 
         console.log({ apiBaseUrl });
 
-        const res = await axios.post(`${apiBaseUrl}/auth/signup`, body, config);
+        // const res = await axios.post(`${apiBaseUrl}/auth/signup`, body, config);
+        // console.log(res.data);
 
         // const res = await axios.post("http://localhost:80/api/auth/signup", body, config);
 
-        console.log(res.data); // This will contain the JWT token
         alert("Signup successful!");
 
         setUsername('');
         setEmail('');
         setPassword('');
+
 
         setButtonName('Sign In');
         setMessage1('Need an account?');

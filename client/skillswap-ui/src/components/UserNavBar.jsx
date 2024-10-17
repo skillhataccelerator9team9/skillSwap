@@ -1,5 +1,6 @@
 
 import { React, useState, useEffect } from 'react';
+import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import logo1 from '../assets/logo1.png'; // Importing the logo image
 
@@ -11,6 +12,15 @@ const UserNavBar = () => {
   const [userName, setUserName] = useState('');  // State to store username
 
   const navigate = useNavigate()  // Hook to navigate to another page
+
+  //code to toggle/show navBar
+  //set the value of className='navBar' as name active using useState
+  // const [active, setActive] = useState('navBar')
+
+  // const showNav = () => {
+  //   setActive('navBar activeNavbar')
+  // }
+
 
   const addBackground = () => {
     if (window.scrollY >= 15) {
@@ -37,6 +47,10 @@ const UserNavBar = () => {
     };
   }, []); // Empty array ensures this effect runs only once
 
+  const scrollPage = () => {
+    window.scrollTo(0, 0);
+  }
+
   const handleSignOut = (mode) => {
     navigate('/');  // Redirect to the login page
   };
@@ -48,9 +62,27 @@ const UserNavBar = () => {
           <img src={logo1} alt="Logo" className="navbar-logo" />
         </div>
         <div className="navbar-items">
-          <a href="#" className="navbar-item">User Profile</a>
-          <a href="#" className="navbar-item">Search</a>
+          {/* <a href="#" className="navbar-item">User Profile</a>
+          <a href="#" className="navbar-item">Search</a> */}
+          <ul className="navbar-items">
+            <li className='navbar-item'>
+              <NavLink to="/userPage" onClick={() => scrollPage()} className={({ isActive }) =>
+                isActive ? "activeNavLink" : "navLink"
+              }>
+                User Profile
+              </NavLink>
+            </li>
+
+            <li className='navbar-item'>
+              <NavLink to="/contact" onClick={() => scrollPage()} className={({ isActive }) =>
+                isActive ? "activeNavLink" : "navLink"
+              }>
+                Search
+              </NavLink>
+            </li>
+          </ul>
         </div>
+
         <div className="nav-userName-signOut">
           <h1>{userName || 'Name'}</h1>
           <button className="navbar-button" onClick={() => handleSignOut()}>
