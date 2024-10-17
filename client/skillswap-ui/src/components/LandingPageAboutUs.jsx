@@ -10,7 +10,7 @@ function LandingPageAboutUs () {
       <div className='container'>
         <div className='aboutUs-text'>
           <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed. Suspendisse lobortis vitae quis vehicula pellentesque sit id. Urna posuere consequat velit vulputate faucibus pretium arcu accumsan sit. Vel venenatis sapien.</p>
+          <p></p>
         </div>
         <div className='aboutUs-columns'>
           <div className='column1'>
@@ -19,18 +19,21 @@ function LandingPageAboutUs () {
           <div className='column2'>
             <ul className="lists">
               <li className='item'>
-                We envision a network of people that enrich others lives through the exchange of skills
+                Who We Are: Skilltopia is a platform dedicated to connecting people in
+                Canada  who are eager to exchange skills and services within their
+                communities
               </li>
               <li className='item'>
-                By bringing individuals together, we foster a unique relationship where each person contributes personal or professional development, ultimately creating a better way of living
+                Our Story: Founded by a team passionate about fostering new ways for
+                people to collaborate and save, Skilltopia was built for individuals to share
+                expertise without traditional costs.
               </li>
               <li className='item'>
-                Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
+                Our Purpose: We believe in empowering connections that expand skills,
+                create valuable contacts, and unlock possibilities—all while saving money.
+                Join us in building a cash-free community for service-based collaboration.
+                No money? No Problem! We are here for you!
               </li>
-              <li className='item'>
-                Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.
-              </li>
-
             </ul>
             <button className="aboutUs-button">
               Read More

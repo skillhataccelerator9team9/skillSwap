@@ -10,25 +10,25 @@ import popular4 from '../assets/popular4.png';
 
 
 const skillsData = {
-  Popular: [
+  'Popular': [
     { name: 'John Doe', skill: 'Photographer', city: 'New York', coins: 40, image: popular1 },
     { name: 'Jane Smith', skill: 'Carpentry', city: 'Toronto', coins: 45, image: popular2 },
     { name: 'Alice Johnson', skill: 'Electrical', city: 'Vancouver', coins: 140, image: popular3 },
     { name: 'Mark Lee', skill: 'Painting', city: 'San Francisco', coins: 302, image: popular4 }
   ],
-  Tech: [
-    { name: 'David Clark', skill: 'Coding', city: 'Austin', coins: 30, image: popular4 },
-    { name: 'Sophia White', skill: 'Web Development', city: 'Chicago', coins: 350, image: popular3 },
-    { name: 'Mason Green', skill: 'Cybersecurity', city: 'Boston', coins: 400, image: popular2 },
-    { name: 'Eva Brown', skill: 'Cloud Engineering', city: 'Seattle', coins: 450, image: popular1 }
+  'Resume Writing': [
+    { name: 'David Clark', skill: 'Resume Expert', city: 'Austin', coins: 30, image: popular4 },
+    { name: 'Sophia White', skill: 'Professor', city: 'Chicago', coins: 350, image: popular3 },
+    { name: 'Mason Green', skill: 'Manager', city: 'Boston', coins: 400, image: popular2 },
+    { name: 'Eva Brown', skill: 'Supervisor', city: 'Seattle', coins: 450, image: popular1 }
   ],
-  Cleaning: [
+  'Cleaning': [
     { name: 'Jacob Wilson', skill: 'House Cleaning', city: 'Miami', coins: 500, image: popular3 },
     { name: 'Olivia Martinez', skill: 'Window Cleaning', city: 'Dallas', coins: 550, image: popular2 },
     { name: 'Emily Harris', skill: 'Carpet Cleaning', city: 'Denver', coins: 600, image: popular4 },
     { name: 'Michael Young', skill: 'Office Cleaning', city: 'Las Vegas', coins: 650, image: popular1 }
   ],
-  DayCare: [
+  'Day Care': [
     { name: 'Amelia King', skill: 'Child Care', city: 'Los Angeles', coins: 700, image: popular4 },
     { name: 'Liam Scott', skill: 'Elderly Care', city: 'Phoenix', coins: 750, image: popular1 },
     { name: 'Charlotte Adams', skill: 'Pet Care', city: 'Houston', coins: 800, image: popular2 },
@@ -42,7 +42,10 @@ const LandingPageMostPolpularSkills = () => {
   return (
     <div className="mostPopularSkills">
       <h1>Most Popular Skills</h1>
-      <p>Lorem ipsum dolor sit amet consectetur. Mattis eu etiam nec facilisis aenean quam quis eu nunc.</p>
+      <p>
+        Check out the most popular skills listed. Skilltopia connects you with
+        trusted local experts, ready to help and collaborate with you!
+      </p>
 
       <div className="tabs">
         {Object.keys(skillsData).map((tab) => (

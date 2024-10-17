@@ -16,7 +16,11 @@ const LandingPageFooter = () => {
           <div className="logo">
             <img src={logo} alt="Auto Fast Logo" />
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur. Proin varius arcu mauris habitasse viverra odio massa at.</p>
+          <p>
+            Building a cash-free community where skills are currency. Connect with
+            local experts, grow your skills, and make meaningful exchanges on
+            Skilltopia!
+          </p>
           <div className="socialIcons">
             <div className="icon2"><TiSocialFacebook /></div>
             <div className="icon2"><FaTwitter /></div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/LandingPageHowItWorksStyle.css';
+import { TbCoinFilled } from "react-icons/tb";
 import { FaCar } from 'react-icons/fa';
 import { BsChatTextFill } from "react-icons/bs";
 import { TiLocation } from "react-icons/ti";
@@ -9,7 +10,8 @@ const LandingPageHowItWorks = () => {
     <div id="how-it-works" className="howItWorksContainer">
       <h1 className="howItWorksHeading">How it works</h1>
       <p className="howItWorksSubheading">
-        Lorem ipsum dolor sit amet consectetur. Porttitor amet sed et consectetur tempus malesuada dictum.
+        We get it! The cost of getting services done is high, and this can be nerve
+        racking. Take the financial burden off you in these 3 easy steps:
       </p>
 
       <div className="howItWorksCards">
@@ -26,7 +28,7 @@ const LandingPageHowItWorks = () => {
         </div>
 
         <div className="howItWorksCard">
-          <FaCar className="cardIcon" />
+          <TbCoinFilled className="cardIcon" />
           <h2 className="cardHeading">Complete, Earn, and Spend</h2>
           <p className="cardSubheading">Complete the task to earn skill coins. Use your earned currency to request other services or skills of your choice. It’s that simple!</p>
         </div>
