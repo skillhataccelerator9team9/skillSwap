@@ -6,7 +6,7 @@
 
 }
 
-.search {
+.profile {
   width: 1240px;
   height: 740.02px;
   padding: 150px 0px 150px 0px;
@@ -18,13 +18,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.search .container {
+.profile .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.search-text h1 {
+.profile-text h1 {
   color: rgba(1, 45, 7, 1);
   font-family: Poppins, sans-serif;
   font-size: 48px;

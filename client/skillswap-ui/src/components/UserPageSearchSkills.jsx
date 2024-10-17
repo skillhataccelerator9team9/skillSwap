@@ -8,8 +8,9 @@ function UserPageSearchSkills () {
   return (
     <div id="search" className='search'>
       <div className='container'>
-        <div className='search'>
-          <h1>Search Skills Page</h1>
+        <div className='search-text'>
+          <h1>Search Skills</h1>
+
         </div>
       </div>
     </div>
