@@ -74,7 +74,7 @@ const UserNavBar = () => {
             </li>
 
             <li className='navbar-item'>
-              <NavLink to="/contact" onClick={() => scrollPage()} className={({ isActive }) =>
+              <NavLink to="/userSearchPage" onClick={() => scrollPage()} className={({ isActive }) =>
                 isActive ? "activeNavLink" : "navLink"
               }>
                 Search

@@ -6,7 +6,8 @@ import HomeScreen from './screens/HomeScreen';
 import ContactScreen from './screens/ContactScreen';
 import LandingPage from './screens/LandingPage';
 import LoginScreen from './screens/LoginScreen';
-import UserScreen from './screens/UserScreen';
+import UserProfileScreen from './screens/UserProfileScreen';
+import UserSearchScreen from './screens/UserSearchScreen';
 
 
 import {
@@ -24,7 +25,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/loginPage" element={<LoginScreen />} />
-            <Route path="/userPage" element={<UserScreen />} />
+            <Route path="/userPage" element={<UserProfileScreen />} />
+            <Route path="/userSearchPage" element={<UserSearchScreen />} />
           </Routes>
         }
       </Router>
