@@ -1,5 +1,6 @@
 :root {
-  --primaryColor: rgba(62, 162, 90, 1);
+  --primaryColor: rgba(2, 128, 19, 1);
+
   --textColor: rgb(92, 92, 92);
 
   --neutral: rgb(255, 255, 255);
@@ -145,8 +146,9 @@
 
 /* Button on the right */
 .aboutUs-button {
-  background-color: var(--primaryColor);
-  color: var(--textColor);
+  background-color: rgba(2, 128, 19, 1);
+
+  color: var(--neutral);
   border: none;
   width: 133.61px;
   height: 40.84px;

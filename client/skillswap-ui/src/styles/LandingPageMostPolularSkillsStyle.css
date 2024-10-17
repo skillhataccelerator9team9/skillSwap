@@ -193,7 +193,8 @@
 .centerButton {
   display: block;
   margin: 0 auto;
-  background-color: var(--primaryColor);
+  background-color: rgba(2, 128, 19, 1);
+
   color: white;
   padding: 10px 20px;
   margin-bottom: 30px;
