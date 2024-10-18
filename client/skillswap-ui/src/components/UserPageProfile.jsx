@@ -82,27 +82,28 @@ function UserPageProfile () {
           <div className="details-row">
             <FaEnvelope className="icon" />
             <span className="detail-text">john1212@example.com</span>
-
+            <p></p>
           </div>
 
           {/* Phone */}
           <div className="details-row">
             <FaPhone className="icon" />
             <span className="detail-text">432-121-2121</span>
-
+            <p></p>
           </div>
 
           {/* Reset Password */}
           <div className="details-row">
             <FaLock className="icon" />
             <span className="detail-text">Reset Password</span>
-
+            <p></p>
           </div>
 
           {/* Delete Account */}
           <div className="details-row">
             <FaTrash className="icon" />
             <span className="detail-text">Delete Account</span>
+            <p></p>
 
           </div>
 
@@ -111,7 +112,7 @@ function UserPageProfile () {
             <TbFlaskFilled className="icon" />
             <span className="detail-text">My Skills</span>
             <div className="skills-icons">
-              <FaArrowRight className="icon arrow-icon" />
+              {/* <FaArrowRight className="icon arrow-icon" /> */}
             </div>
           </div>
         </div>

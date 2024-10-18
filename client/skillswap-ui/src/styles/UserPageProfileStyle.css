@@ -52,8 +52,8 @@
   font-weight: 700;
   line-height: 50px;
   text-align: left;
-  background: rgba(0, 0, 0, 1);
-  color: white;
+  background: white;
+  color: rgba(0, 0, 0, 1);
 }
 
 .edit-button {
@@ -100,7 +100,8 @@
   max-width: 600px;
   padding: 20px;
   margin-top: 30px;
-  background: rgba(97, 97, 97, 1);
+  /* background: rgba(97, 97, 97, 1); */
+  background-color: rgba(246, 247, 249, 1);
 }
 
 .location-label {
@@ -108,7 +109,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
-  color: white;
+  color: black;
   margin-bottom: 15px;
 }
 
@@ -116,13 +117,14 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  padding-left: 10px;
 }
 
 .location-icon {
   width: 40px;
   height: 30px;
-  background: rgba(85, 86, 90, 1);
-  border: 1px solid rgba(85, 86, 90, 1);
+  /* background: rgba(85, 86, 90, 1);
+  border: 1px solid rgba(85, 86, 90, 1); */
   transform: rotate(-135deg);
 }
 
@@ -130,7 +132,8 @@
   font-family: Poppins;
   font-size: 18px;
   font-weight: 500;
-  color: white;
+  color: black;
+  padding-left: 20px;
 }
 
 /* Personal Details Styles */
@@ -139,7 +142,8 @@
   max-width: 600px;
   padding: 20px;
   margin-top: 30px;
-  background: rgba(217, 217, 217, 1);
+  /* background: rgba(217, 217, 217, 1); */
+  background-color: rgba(246, 247, 249, 1);
 }
 
 .personal-details-label {
@@ -152,10 +156,18 @@
 }
 
 .details-row {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 15px; */
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  /* margin: 20px; */
+  border-bottom: 1px solid black;
 }
 
 .details-row .icon {
@@ -167,4 +179,5 @@
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
+  text-align: left;
 }
