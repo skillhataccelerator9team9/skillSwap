@@ -24,6 +24,20 @@
   align-items: center;
 }
 
+.container {
+  display: flex;
+  /* Use Flexbox for layout */
+  flex-direction: column;
+  /* Arrange items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  justify-content: flex-start;
+  /* Start from the top */
+  min-height: 100vh;
+  /* Ensure the container takes full height */
+}
+
+
 .search-text h1 {
   color: rgba(1, 45, 7, 1);
   font-family: Poppins, sans-serif;
@@ -33,4 +47,124 @@
   letter-spacing: -0.01em;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.skills-search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-box {
+  /* display: flex;
+  text-align: center;
+  width: 358px;
+  height: 46px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(175, 186, 202, 1);
+  border-radius: 6px; */
+
+  display: flex;
+  /* Flexbox for search input and icon */
+  align-items: center;
+  /* Center icon and input vertically */
+  border: 1px solid #ccc;
+  /* Optional: border around the search box */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 8px;
+  width: 358px;
+  /* Set width to match your requirements */
+  margin-bottom: 20px;
+  /* Space below the search box */
+}
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+
+.search-input {
+  border: none;
+  /* Remove default border */
+  outline: none;
+  /* Remove outline on focus */
+  flex: 1;
+  /* Take up available space */
+  font-size: 16px;
+  /* Font size */
+  padding: 5px;
+  /* Padding for the input */
+  color: #333;
+  /* Text color */
+}
+
+.search-text {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(136, 151, 174, 1);
+}
+
+.skills-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.skill-card {
+  width: 230px;
+  background-color: rgba(217, 217, 217, 1);
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.skill-photo {
+  width: 100%;
+  height: 120px;
+
+}
+
+.skill-info h3 {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+.skill-info p {
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.person-photo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.person-details h4 {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.request-button {
+  background: rgba(177, 174, 182, 1);
+  width: 110px;
+  height: 30px;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
