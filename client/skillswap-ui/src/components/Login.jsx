@@ -63,8 +63,8 @@ const Login = () => {
 
         console.log({ apiBaseUrl });
 
-        // const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
-        // console.log(res.data);
+        const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
+        console.log(res.data);
 
         // This will contain the JWT token
         alert("Signin successful!");
@@ -97,8 +97,8 @@ const Login = () => {
 
         console.log({ apiBaseUrl });
 
-        // const res = await axios.post(`${apiBaseUrl}/auth/signup`, body, config);
-        // console.log(res.data);
+        const res = await axios.post(`${apiBaseUrl}/auth/signup`, body, config);
+        console.log(res.data);
 
         // const res = await axios.post("http://localhost:80/api/auth/signup", body, config);
 
