@@ -24,20 +24,6 @@
   align-items: center;
 }
 
-.container {
-  display: flex;
-  /* Use Flexbox for layout */
-  flex-direction: column;
-  /* Arrange items vertically */
-  align-items: center;
-  /* Center items horizontally */
-  justify-content: flex-start;
-  /* Start from the top */
-  min-height: 100vh;
-  /* Ensure the container takes full height */
-}
-
-
 .search-text h1 {
   color: rgba(1, 45, 7, 1);
   font-family: Poppins, sans-serif;

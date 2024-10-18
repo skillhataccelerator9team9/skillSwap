@@ -78,7 +78,7 @@
   font-size: 18px;
   font-weight: 500;
   transition: 0.5s; */
-  background-color: var(--primaryColor);
+  background-color: rgba(2, 128, 19, 1);
   color: var(--neutral);
   border: none;
   width: 140px;
