@@ -38,6 +38,7 @@ app.use("/api/skills", require("./routes/skillRoutes"));
 app.use("/api/profile", require("./routes/profileRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
 app.use("/", require("./routes/home"));
+app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
 app.get("*", (req, res) => {
   res.sendFile(
