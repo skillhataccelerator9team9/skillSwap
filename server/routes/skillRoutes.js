@@ -12,10 +12,10 @@ router.post(
   authMiddleware,
   upload.single("sampleWorkImage"),
   async (req, res) => {
-    const { skillName, description, value } = req.body;
+    const { skillName, description, value, tradingPreference } = req.body;
     const sampleWorkImage = req.file ? req.file.path : null;
 
-    if (!skillName || !description || !value) {
+    if (!skillName || !description || !value || !tradingPreference) {
       return res
         .status(400)
         .json({ msg: "Validation error: Missing required fields" });
@@ -27,6 +27,7 @@ router.post(
         skillName,
         description,
         value,
+        tradingPreference, // Include trading preference
         sampleWorkImage,
       });
       await newSkill.save();
@@ -92,12 +93,12 @@ router.put(
   authMiddleware,
   upload.single("sampleWorkImage"),
   async (req, res) => {
-    const { skillName, description, value } = req.body;
+    const { skillName, description, value, tradingPreference } = req.body;
     const sampleWorkImage = req.file ? req.file.path : null;
 
     try {
       // Prepare data to update
-      const updateData = { skillName, description, value };
+      const updateData = { skillName, description, value, tradingPreference };
       if (sampleWorkImage) {
         updateData.sampleWorkImage = sampleWorkImage;
       }
