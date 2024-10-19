@@ -10,7 +10,34 @@ const UserSchema = new mongoose.Schema({
   availableDays: { type: [String] },
 
   skills: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }], // Services provided by the user
-  requestedServices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Skill" }], // Services requested by the user
+
+  requestedServices: [
+    {
+      skill: { type: mongoose.Schema.Types.ObjectId, ref: "Skill" },
+      provider: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      status: {
+        type: String,
+        enum: ["WAITING", "IN_PROGRESS", "COMPLETED"],
+        default: "WAITING",
+      },
+      isRequesterComplete: { type: Boolean, default: false },
+      isProviderComplete: { type: Boolean, default: false },
+    },
+  ],
+
+  providedServices: [
+    {
+      skill: { type: mongoose.Schema.Types.ObjectId, ref: "Skill" },
+      requester: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      status: {
+        type: String,
+        enum: ["WAITING", "IN_PROGRESS", "COMPLETED"],
+        default: "WAITING",
+      },
+      isRequesterComplete: { type: Boolean, default: false },
+      isProviderComplete: { type: Boolean, default: false },
+    },
+  ],
 
   reviews: [{ reviewText: String, rating: Number }],
   verified: { type: Boolean, default: false },
