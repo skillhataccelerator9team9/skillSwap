@@ -118,4 +118,40 @@ router.delete("/delete/:id", authMiddleware, async (req, res) => {
   }
 });
 
+// @route   POST /api/skills/request/:skillId
+// @desc    Request a service (skill) from another user
+// @access  Private (Requires Authentication)
+
+router.post("/request/:skillId", authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+
+    // Find service that is being requested
+    const skill = await Skill.findById(req.params.skillId);
+
+    if (!skill) {
+      return res.status(404).json({ msg: "Skill not found" });
+    }
+
+    // Check if the user has already requested this service to prevent duplicates
+    if (user.requestedServices.includes(skill._id)) {
+      return res
+        .status(400)
+        .json({ msg: "You have already requested this service" });
+    }
+
+    // Add the skill to the requestedServices array of the requesting user
+    user.requestedServices.push(skill._id);
+
+    await user.save();
+
+    res.status(201).json({ msg: "Service requested successfully", skill });
+
+    console.log(`Service ${skill._id} requested by user ${req.user.id}`);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;
