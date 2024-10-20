@@ -23,7 +23,7 @@ router.post("/request/:skillId", authMiddleware, async (req, res) => {
     }
 
     // Check if the user has already requested this service
-    const alreadyRequested = user.requestedServices.some(
+    const alreadyRequested = requester.requestedServices.some(
       (service) => service.skill.toString() === skill._id.toString()
     );
 
