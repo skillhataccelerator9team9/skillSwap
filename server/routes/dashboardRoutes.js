@@ -139,4 +139,39 @@ router.get("/requests", authMiddleware, async (req, res) => {
   }
 });
 
+// @route   DELETE /api/dashboard/request/:serviceId/cancel
+// @desc    Cancel a requested service that is in the "WAITING" state
+// @access  Private (Requires Authentication)
+router.delete(
+  "/request/:serviceId/cancel",
+  authMiddleware,
+  async (req, res) => {
+    try {
+      const user = await User.findById(req.user.id);
+
+      // Find the requested service to cancel
+      const serviceIndex = user.requestedServices.findIndex(
+        (service) =>
+          service._id.toString() === req.params.serviceId &&
+          service.status === "WAITING"
+      );
+
+      if (serviceIndex === -1) {
+        return res
+          .status(404)
+          .json({ msg: "Service not found or not in waiting state" });
+      }
+
+      // Remove the service from the requestedServices array
+      user.requestedServices.splice(serviceIndex, 1);
+      await user.save();
+
+      res.json({ msg: "Service request canceled successfully" });
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
+  }
+);
+
 module.exports = router;
