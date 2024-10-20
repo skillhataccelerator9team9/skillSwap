@@ -112,4 +112,31 @@ router.put("/complete/:serviceId", authMiddleware, async (req, res) => {
   }
 });
 
+// @route   GET /api/dashboard/requests
+// @desc    Get all requested services categorized by status for the authenticated user
+// @access  Private (Requires Authentication)
+router.get("/requests", authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).populate({
+      path: "requestedServices.skill provider",
+      model: "Skill User",
+    });
+
+    const waiting = user.requestedServices.filter(
+      (service) => service.status === "WAITING"
+    );
+    const inProgress = user.requestedServices.filter(
+      (service) => service.status === "IN_PROGRESS"
+    );
+    const completed = user.requestedServices.filter(
+      (service) => service.status === "COMPLETED"
+    );
+
+    res.json({ waiting, inProgress, completed });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;
