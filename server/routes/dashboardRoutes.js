@@ -9,7 +9,7 @@ const User = require("../models/User");
 // @access  Private (Requires Authentication)
 router.post("/request/:skillId", authMiddleware, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id); // Requester
+    const requester = await User.findById(req.user.id); // Requester
     const skill = await Skill.findById(req.params.skillId); // Skill being requested
 
     if (!skill) {
@@ -33,8 +33,8 @@ router.post("/request/:skillId", authMiddleware, async (req, res) => {
         .json({ msg: "You have already requested this service" });
     }
 
-    // Add to the user's requested services
-    user.requestedServices.push({
+    // Add to the requester's requested services
+    requester.requestedServices.push({
       skill: skill._id,
       provider: provider._id,
       status: "WAITING",
@@ -43,16 +43,69 @@ router.post("/request/:skillId", authMiddleware, async (req, res) => {
     // Add to the provider's provided services
     provider.providedServices.push({
       skill: skill._id,
-      requester: user._id,
+      requester: requester._id,
       status: "WAITING",
     });
 
-    await user.save();
+    await requester.save();
     await provider.save();
 
     res.status(201).json({ msg: "Service requested successfully", skill });
 
     console.log(`Service ${skill._id} requested by user ${req.user.id}`);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
+// @route   PUT /api/dashboard/complete/:serviceId
+// @desc    Mark service as complete for requester or provider
+// @access  Private (Requires Authentication)
+router.put("/complete/:serviceId", authMiddleware, async (req, res) => {
+  try {
+    const { role } = req.body; // role should be either "requester" or "provider"
+    const user = await User.findById(req.user.id);
+
+    // Determine which service needs to be updated
+    let service;
+    if (role === "requester") {
+      // Look in the requestedServices array if the user is the requester
+      service = user.requestedServices.find(
+        (s) => s._id.toString() === req.params.serviceId
+      );
+      if (service) service.isRequesterComplete = true;
+    } else if (role === "provider") {
+      // Look in the providedServices array if the user is the provider
+      service = user.providedServices.find(
+        (s) => s._id.toString() === req.params.serviceId
+      );
+      if (service) service.isProviderComplete = true;
+    }
+
+    if (!service) {
+      return res.status(404).json({ msg: "Service not found" });
+    }
+
+    // Check if both parties have marked it as complete
+    if (service.isRequesterComplete && service.isProviderComplete) {
+      service.status = "COMPLETED";
+
+      // Transfer points from requester to provider
+      const requester = await User.findById(service.requester);
+      const provider = await User.findById(service.provider);
+      const skill = await Skill.findById(service.skill);
+
+      if (requester && provider && skill) {
+        requester.points -= skill.value;
+        provider.points += skill.value;
+        await requester.save();
+        await provider.save();
+      }
+    }
+
+    await user.save();
+    res.json({ msg: "Service status updated", service });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
