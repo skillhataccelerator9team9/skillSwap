@@ -22,6 +22,10 @@ const UserSchema = new mongoose.Schema({
       },
       isRequesterComplete: { type: Boolean, default: false },
       isProviderComplete: { type: Boolean, default: false },
+      review: {
+        rating: { type: Number, min: 1, max: 5 },
+        reviewText: { type: String },
+      },
     },
   ],
 
@@ -36,10 +40,12 @@ const UserSchema = new mongoose.Schema({
       },
       isRequesterComplete: { type: Boolean, default: false },
       isProviderComplete: { type: Boolean, default: false },
+      review: {
+        rating: { type: Number, min: 1, max: 5 },
+        reviewText: { type: String },
+      },
     },
   ],
-
-  reviews: [{ reviewText: String, rating: Number }],
   verified: { type: Boolean, default: false },
   verificationToken: { type: String },
 });
