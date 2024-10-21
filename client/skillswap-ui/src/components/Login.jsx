@@ -4,10 +4,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 // import Cookies from 'js-cookie';
 
 import '../styles/login.css'
+import { useUser } from './UserContext';
+
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Login = () => {
+
+  const { signIn } = useUser();
 
   const location = useLocation();  // Hook to access passed state
 
@@ -66,13 +70,23 @@ const Login = () => {
         const res = await axios.post(`${apiBaseUrl}/auth/login`, body, config);
         console.log(res.data);
 
+        // Assuming the response contains user data
+        const userData = res.data; // Adjust this based on your API response structure
+
+        console.log("Data: - >", userData);
+        console.log(userData);
+
+
         // This will contain the JWT token
         alert("Signin successful!");
-
         setUsername('');
         setEmail('');
         setPassword('');
 
+        // Pass userData when navigating to the UserProfileScreen
+        // navigate('/userPage', { state: { user: userData } });
+
+        signIn(userData); // Pass user data to context
         navigate('/userPage');
       } catch (err) {
         console.error(err.response.data);

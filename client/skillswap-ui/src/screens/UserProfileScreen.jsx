@@ -5,6 +5,7 @@ import UserPageProfile from '../components/UserPageProfile';
 
 
 function UserProfileScreen () {
+
   return (
     <div className='UserProfileScreen'>
       <UserNavBar />

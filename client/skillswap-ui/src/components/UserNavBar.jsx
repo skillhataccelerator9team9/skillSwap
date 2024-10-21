@@ -3,13 +3,17 @@ import { React, useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import logo1 from '../assets/logo1.png'; // Importing the logo image
-
 import '../styles/UserNavBarStyle.css'
+import { useUser } from './UserContext';
 
 const UserNavBar = () => {
 
+  const { userData, signOut } = useUser();
+
+  // console.log('User data in NavBar:', userData);
+
   const [transparent, setTransparent] = useState('navbar')
-  const [userName, setUserName] = useState('');  // State to store username
+  const [userName, setUserName] = useState('');
 
   const navigate = useNavigate()  // Hook to navigate to another page
 
@@ -34,6 +38,8 @@ const UserNavBar = () => {
   // Using useEffect to handle the scroll event and clean it up
   useEffect(() => {
 
+    setUserName(userData.user?.username);
+
     window.addEventListener('scroll', addBackground);
 
     // Fetch the username from cookies when the component loads
@@ -51,7 +57,8 @@ const UserNavBar = () => {
     window.scrollTo(0, 0);
   }
 
-  const handleSignOut = (mode) => {
+  const handleSignOut = () => {
+    signOut();
     navigate('/');  // Redirect to the login page
   };
 
@@ -84,7 +91,9 @@ const UserNavBar = () => {
         </div>
 
         <div className="nav-userName-signOut">
-          <h1>{userName || 'Name'}</h1>
+          {/* <h1>{userName || 'Name'}</h1> */}
+
+          <h1>Welcome, {userName || 'User'}!</h1>
           <button className="navbar-button" onClick={() => handleSignOut()}>
             Sign Out
           </button>

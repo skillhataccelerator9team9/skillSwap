@@ -9,6 +9,8 @@ import LoginScreen from './screens/LoginScreen';
 import UserProfileScreen from './screens/UserProfileScreen';
 import UserSearchScreen from './screens/UserSearchScreen';
 import EmailVerification from './components/EmailVerification';
+import { UserProvider } from './components/UserContext';
+
 
 
 import {
@@ -21,17 +23,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <Router>
-        {
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/loginPage" element={<LoginScreen />} />
-            <Route path="/userPage" element={<UserProfileScreen />} />
-            <Route path="/userSearchPage" element={<UserSearchScreen />} />
-            <Route path="/verify-email" element={<EmailVerification />} />
-          </Routes>
-        }
-      </Router>
+      <UserProvider>
+        <Router>
+          {
+            <Routes>
+
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/loginPage" element={<LoginScreen />} />
+              <Route path="/userPage" element={<UserProfileScreen />} />
+              <Route path="/userSearchPage" element={<UserSearchScreen />} />
+              <Route path="/verify-email" element={<EmailVerification />} />
+
+            </Routes>
+          }
+        </Router>
+      </UserProvider>
     </div>
   )
 }

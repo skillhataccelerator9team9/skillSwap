@@ -19,14 +19,33 @@
 
 // export default UserPageProfile;
 
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import '../styles/UserPageProfileStyle.css';
 import customer1 from '../assets/customer1.jpeg'
 import { FaEnvelope, FaPhone, FaLock, FaTrash, FaArrowRight } from 'react-icons/fa'; // Importing icons
 import { FaLocationPin } from 'react-icons/fa6';
 import { TbFlaskFilled } from 'react-icons/tb';
+import { useUser } from './UserContext';
 
 function UserPageProfile () {
+
+  const { userData } = useUser();
+
+  const [userName, setUserName] = useState('');
+  const [userLocation, setUserLocation] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPhoneNumber, setUserPhoneNumber] = useState('');
+
+
+  useEffect(() => {
+
+    setUserName(userData.user?.username);
+    setUserLocation(userData.user?.location);
+    setUserEmail(userData.user?.email);
+    setUserPhoneNumber(userData.user?.phone);
+
+  }, []);
+
   return (
     <div id="profile" className="profile">
       <div className='container'>
@@ -36,7 +55,7 @@ function UserPageProfile () {
         </div>
         {/* Top frame with user name and edit button */}
         <div className="top-frame">
-          <span className="user-name">John Doe</span>
+          <span className="user-name">{userName || 'n/a'}</span>
           <button className="edit-button">Edit</button>
         </div>
 
@@ -70,7 +89,8 @@ function UserPageProfile () {
           <span className="location-label">Location</span>
           <div className="location-details">
             <FaLocationPin className="icon" />
-            <span className="location-name">New York, USA</span>
+            {/* <span className="location-name">New York, USA</span> */}
+            <span className="location-name">{userLocation || 'n/a'}</span>
           </div>
         </div>
 
@@ -81,14 +101,16 @@ function UserPageProfile () {
           {/* Email */}
           <div className="details-row">
             <FaEnvelope className="icon" />
-            <span className="detail-text">john1212@example.com</span>
+            {/* <span className="detail-text">john1212@example.com</span> */}
+            <span className="detail-text">{userEmail || 'n/a'}</span>
             <p></p>
           </div>
 
           {/* Phone */}
           <div className="details-row">
             <FaPhone className="icon" />
-            <span className="detail-text">432-121-2121</span>
+            {/* <span className="detail-text">432-121-2121</span> */}
+            <span className="detail-text">{userPhoneNumber || 'n/a'}</span>
             <p></p>
           </div>
 
