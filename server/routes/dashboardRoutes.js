@@ -170,6 +170,53 @@ router.put("/complete/:serviceId", authMiddleware, async (req, res) => {
   }
 });
 
+// @route   POST /api/dashboard/review/:serviceId
+// @desc    Add a review for a completed service
+// @access  Private (Requires Authentication)
+router.post("/review/:serviceId", authMiddleware, async (req, res) => {
+  try {
+    const { rating, reviewText } = req.body;
+
+    // Find the service from the requester's or provider's completed services
+    const user = await User.findById(req.user.id);
+    let service;
+    if (
+      user.requestedServices.some(
+        (s) => s._id.toString() === req.params.serviceId
+      )
+    ) {
+      service = user.requestedServices.find(
+        (s) =>
+          s._id.toString() === req.params.serviceId && s.status === "COMPLETED"
+      );
+    } else {
+      service = user.providedServices.find(
+        (s) =>
+          s._id.toString() === req.params.serviceId && s.status === "COMPLETED"
+      );
+    }
+
+    if (!service) {
+      return res
+        .status(404)
+        .json({ msg: "Service not found or not completed" });
+    }
+
+    // Save the review (ensure to add validation for rating values)
+    service.review = {
+      rating: Math.min(Math.max(rating, 1), 5), // Ensure rating is between 1 and 5
+      reviewText: reviewText || "",
+    };
+
+    await user.save();
+
+    res.json({ msg: "Review added successfully", service });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 // @route   GET /api/dashboard/requests
 // @desc    Get all requested services categorized by status for the authenticated user
 // @access  Private (Requires Authentication)
