@@ -59,6 +59,64 @@ router.post("/request/:skillId", authMiddleware, async (req, res) => {
   }
 });
 
+// @route   PUT /api/dashboard/service/:serviceId/accept
+// @desc    Accept or reject a requested service
+// @access  Private (Provider Only)
+router.put("/service/:serviceId/accept", authMiddleware, async (req, res) => {
+  try {
+    const { action } = req.body; // action should be either "accept" or "reject"
+    const provider = await User.findById(req.user.id);
+
+    // Find the requested service from the provider's providedServices array
+    const service = provider.providedServices.find(
+      (s) => s._id.toString() === req.params.serviceId && s.status === "WAITING"
+    );
+
+    if (!service) {
+      return res
+        .status(404)
+        .json({ msg: "Service not found or not in waiting state" });
+    }
+
+    const requester = await User.findById(service.requester);
+
+    if (!requester) {
+      return res.status(404).json({ msg: "Requester not found" });
+    }
+
+    if (action === "accept") {
+      // Update status to "IN_PROGRESS" for both users
+      service.status = "IN_PROGRESS";
+      const requestedService = requester.requestedServices.find(
+        (s) => s.skill.toString() === service.skill.toString()
+      );
+      if (requestedService) {
+        requestedService.status = "IN_PROGRESS";
+      }
+    } else if (action === "reject") {
+      // Remove the service from both users' lists
+      provider.providedServices = provider.providedServices.filter(
+        (s) => s._id.toString() !== req.params.serviceId
+      );
+      requester.requestedServices = requester.requestedServices.filter(
+        (s) => s.skill.toString() !== service.skill.toString()
+      );
+    } else {
+      return res
+        .status(400)
+        .json({ msg: "Invalid action. Use 'accept' or 'reject'" });
+    }
+
+    await provider.save();
+    await requester.save();
+
+    res.json({ msg: `Service ${action}ed successfully` });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 // @route   PUT /api/dashboard/complete/:serviceId
 // @desc    Mark service as complete for requester or provider
 // @access  Private (Requires Authentication)
