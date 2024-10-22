@@ -12,7 +12,7 @@ let skillId;
 let serviceId;
 
 beforeAll(async () => {
-  process.env.TEST_USER_ID = new Types.ObjectId();
+  process.env.TEST_USER_ID = new mongoose.Types.ObjectId().toString();
 
   // Set up a connection to the test database
   await mongoose.connect(process.env.MONGO_URI_TEST, {
