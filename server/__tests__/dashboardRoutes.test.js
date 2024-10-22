@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Types } = mongoose;
+const bcrypt = require("bcrypt");
 const request = require("supertest");
 const app = require("../app"); // Your Express app
 const User = require("../models/User");
@@ -22,7 +22,6 @@ beforeAll(async () => {
 
   // Create test users
   const requester = new User({
-    _id: process.env.TEST_USER_ID,
     username: "requester",
     email: "requester@test.com",
     password: hashedPassword,
@@ -30,7 +29,7 @@ beforeAll(async () => {
   const provider = new User({
     username: "provider",
     email: "provider@test.com",
-    password: "123456",
+    password: hashedPassword,
   });
 
   await requester.save();
