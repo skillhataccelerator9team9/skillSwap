@@ -1,6 +1,7 @@
+const mongoose = require("mongoose");
+const { Types } = mongoose;
 const request = require("supertest");
 const app = require("../app"); // Your Express app
-const mongoose = require("mongoose");
 const User = require("../models/User");
 const Skill = require("../models/Skill");
 
