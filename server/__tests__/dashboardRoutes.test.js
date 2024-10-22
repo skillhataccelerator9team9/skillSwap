@@ -38,6 +38,9 @@ beforeAll(async () => {
   requesterId = requester._id;
   providerId = provider._id;
 
+  // Set process.env.TEST_USER_ID for test purposes
+  process.env.TEST_USER_ID = requesterId.toString();
+
   // Create a skill
   const skill = new Skill({
     skillName: "Guitar Lesson",

@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 function authMiddleware(req, res, next) {
   // Bypass authentication if running in test environment
   if (process.env.NODE_ENV === "test") {
-    req.user = { id: process.env.TEST_USER_ID || "someTestUserId" };
+    req.user = { id: requesterId || "someTestUserId" };
     return next();
   }
 
