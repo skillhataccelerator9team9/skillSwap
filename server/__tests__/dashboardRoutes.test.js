@@ -40,6 +40,8 @@ beforeAll(async () => {
     skillName: "Guitar Lesson",
     description: "Learn to play guitar",
     value: 50,
+    tradingPreference: "inPerson",
+    category: "Music",
   });
   await skill.save();
   skillId = skill._id;

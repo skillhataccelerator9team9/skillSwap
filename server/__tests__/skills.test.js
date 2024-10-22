@@ -37,6 +37,8 @@ describe("Skills API", () => {
         "do  haircuts, chemical treatments, permanent hair extensions, and hair coloring",
       value: 100,
       sampleWorkImage: "http://example.com/hair-sample.jpg",
+      tradingPreference: "inPerson",
+      category: "Beauty & Skincare",
     };
 
     // Make a POST request to add the skill
