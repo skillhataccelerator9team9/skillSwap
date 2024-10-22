@@ -21,6 +21,7 @@ beforeAll(async () => {
 
   // Create test users
   const requester = new User({
+    _id: process.env.TEST_USER_ID,
     username: "requester",
     email: "requester@test.com",
     password: "123456",
