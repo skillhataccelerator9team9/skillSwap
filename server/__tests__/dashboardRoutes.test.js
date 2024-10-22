@@ -12,20 +12,20 @@ let skillId;
 let serviceId;
 
 beforeAll(async () => {
-  process.env.TEST_USER_ID = new mongoose.Types.ObjectId().toString();
-
   // Set up a connection to the test database
   await mongoose.connect(process.env.MONGO_URI_TEST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 
+  const hashedPassword = await bcrypt.hash("123456", 10);
+
   // Create test users
   const requester = new User({
     _id: process.env.TEST_USER_ID,
     username: "requester",
     email: "requester@test.com",
-    password: "123456",
+    password: hashedPassword,
   });
   const provider = new User({
     username: "provider",
