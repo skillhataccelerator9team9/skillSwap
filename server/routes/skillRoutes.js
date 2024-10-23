@@ -51,7 +51,7 @@ router.post(
 
       res.status(201).json(newSkill);
     } catch (err) {
-      console.error(err.message);
+      console.error("Error in /add route:", err.message);
       res.status(500).send("Server error");
     }
   }
