@@ -8,6 +8,7 @@ import LandingPage from './screens/LandingPage';
 import LoginScreen from './screens/LoginScreen';
 import UserProfileScreen from './screens/UserProfileScreen';
 import UserSearchScreen from './screens/UserSearchScreen';
+import OnBoardingScreen from './screens/OnBoardingScreen';
 import EmailVerification from './components/EmailVerification';
 import { UserProvider } from './components/UserContext';
 
@@ -18,6 +19,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+
 
 const App = () => {
 
@@ -33,6 +35,7 @@ const App = () => {
               <Route path="/userPage" element={<UserProfileScreen />} />
               <Route path="/userSearchPage" element={<UserSearchScreen />} />
               <Route path="/verify-email" element={<EmailVerification />} />
+              <Route path="/onBoardingPage" element={<OnBoardingScreen />} />
 
             </Routes>
           }

@@ -88,6 +88,8 @@ const Login = () => {
 
         signIn(userData); // Pass user data to context
         navigate('/userPage');
+
+
       } catch (err) {
         console.error(err.response.data);
         console.error('Error:', err);  // Check if there’s an error in the request

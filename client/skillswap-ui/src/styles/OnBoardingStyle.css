@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.onboarding-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.phase-1 {
+  background: rgba(2, 128, 19, 1);
+}
+
+.phase-2,
+.phase-3,
+.phase-4 {
+  background: linear-gradient(196.23deg, rgba(0, 0, 0, 0) 11.27%, rgba(0, 0, 0, 0.026) 60.84%, rgba(0, 0, 0, 0.2) 94.41%);
+}
+
+.phase-one,
+.phase-two,
+.phase-three,
+.phase-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.skilltopia-text {
+  position: absolute;
+  top: 250px;
+  /* Adjusted for higher position */
+  font-size: 64px;
+  /* Double the size */
+  color: white;
+  text-align: center;
+}
+
+.loading-circle {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  top: 340px;
+  /* Adjusted position for more space from text */
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-container {
+  width: 70%;
+  /* Occupies 70% of the width */
+  height: 70%;
+  /* Occupies 70% of the height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  /* Space above the image container */
+}
+
+.image-container img {
+  width: 100%;
+  /* Full width of the container */
+  height: 100%;
+  /* Full height of the container */
+  object-fit: cover;
+  /* Covers the area while preserving aspect ratio */
+}
+
+.text-frame {
+  width: 70%;
+  /* Match width of the image */
+  height: auto;
+  /* Adjust height automatically */
+  padding: 20px;
+  /* Padding around the text */
+  border-radius: 31.04px;
+  background: rgba(255, 255, 255, 1);
+  margin-top: auto;
+  /* Pushes the frame to the bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center contents horizontally */
+  justify-content: center;
+  /* Center contents vertically */
+}
+
+.phase-text-frame {
+  width: 100%;
+  /* Full width of the frame */
+  height: auto;
+  /* Adjust height automatically */
+  padding: 20px;
+  /* Padding around the text */
+  border-radius: 10px;
+  /* Rounded corners for the frame */
+  background: rgba(255, 255, 255, 0.8);
+  /* Slightly transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center the contents */
+  justify-content: space-between;
+  /* Evenly space items */
+}
+
+.text {
+  width: 100%;
+  /* Use full width of the frame */
+  height: auto;
+  /* Allows text to wrap */
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  /* Center the text */
+  margin-bottom: 20px;
+  /* Space between text and button */
+}
+
+.dots {
+  width: 48.63px;
+  height: 7.24px;
+  margin: 4.14px 0;
+  opacity: 1;
+  /* Change to 1 for visibility */
+  background: black;
+  /* Background color for dots */
+}
+
+.next-button {
+  width: 360px;
+  /* Set the width of the button */
+  height: 56px;
+  /* Set the height of the button */
+  border-radius: 30px;
+  /* Adjust as necessary */
+  background: rgba(2, 128, 19, 1);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  /* Space above the button */
+  opacity: 1;
+  /* Change to 1 for visibility */
+}
+
+/* Added styles for centering button in the frame */
+.phase-text-frame .next-button {
+  align-self: center;
+  /* Center the button */
+  margin-top: 20px;
+  /* Space above the button */
+}

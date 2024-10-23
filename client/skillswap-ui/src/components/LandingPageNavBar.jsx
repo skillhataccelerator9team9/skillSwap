@@ -31,8 +31,8 @@ const LandingPageNavBar = () => {
   }, []); // Empty array ensures this effect runs only once
 
   // Function to navigate and pass state for "Sign In" or "Sign Up"
-  const handleLogin = (mode) => {
-    navigate('/loginPage', { state: { mode } });  // Pass "signIn" or "signUp"
+  const handleLogin = () => {
+    navigate('/onBoardingPage');
   };
 
   return (
@@ -49,11 +49,14 @@ const LandingPageNavBar = () => {
           <a href="#testimonial" className="navbar-item">Testimonial</a>
         </div>
         <div>
-          <button className="navbar-button" onClick={() => handleLogin('signIn')}>
+          {/* <button className="navbar-button" onClick={() => handleLogin('signIn')}>
             Sign In
           </button>
           <button className="navbar-button" onClick={() => handleLogin('signUp')}>
             Sign Up
+          </button> */}
+          <button className="navbar-button" onClick={() => handleLogin()}>
+            Login
           </button>
         </div>
       </div>
