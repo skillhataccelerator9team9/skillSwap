@@ -9,6 +9,11 @@ const User = require("../models/User");
 // @access  Private (Requires Authentication)
 router.post("/request/:skillId", authMiddleware, async (req, res) => {
   try {
+    // Validate Skill ID
+    if (!mongoose.Types.ObjectId.isValid(req.params.skillId)) {
+      return res.status(400).json({ msg: "Invalid skill ID" });
+    }
+
     const requester = await User.findById(req.user.id); // Requester
     const skill = await Skill.findById(req.params.skillId); // Skill being requested
 
