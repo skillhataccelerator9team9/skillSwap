@@ -1,0 +1,108 @@
+/* Container */
+.verification-container-wrapper {
+  background-color: rgba(2, 128, 19, 1);
+  /* Primary background color only for this page */
+  height: 100vh;
+  /* Full height for this container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Container */
+.verification-container {
+  background: rgba(2, 128, 19, 1);
+  width: 361px;
+  height: 477px;
+  margin: 130px auto;
+  padding: 50px;
+  /* Added padding */
+  border-radius: 20px;
+  border: 1px solid rgba(249, 249, 249, 1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  /* Added to align text */
+  position: relative;
+  /* For positioning child elements */
+}
+
+/* Title */
+.verification-title {
+  width: 100%;
+  /* Adjust width */
+  font-family: Poppins, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  color: rgba(2, 128, 19, 1);
+  margin-bottom: 20px;
+  /* Add space below title */
+}
+
+/* Circle with Checkmark */
+.verification-check-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  /* Centered and added margin */
+  background: linear-gradient(0deg, #D9D9D9, #D9D9D9),
+    linear-gradient(0deg, #D7D7D7, #D7D7D7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verification-check-icon {
+  width: 60.87px;
+  height: 51px;
+  color: rgba(2, 128, 19, 1);
+}
+
+/* Message */
+.verification-message {
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+  /* Space below message */
+}
+
+/* Login Button */
+.login-button {
+  width: 137px;
+  height: 42px;
+  margin: 0 auto;
+  /* Center button */
+  border-radius: 6px;
+  background-color: rgba(2, 128, 19, 1);
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: rgba(2, 100, 19, 1);
+}
+
+/* Skip Text */
+.skip-text {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(97, 97, 97, 1);
+  margin-top: 10px;
+  /* Space above skip text */
+  cursor: pointer;
+}
+
+.skip-text:hover {
+  color: rgba(50, 50, 50, 1);
+}

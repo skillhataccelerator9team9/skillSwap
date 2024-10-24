@@ -20,7 +20,6 @@ import {
   Route
 } from "react-router-dom";
 
-
 const App = () => {
 
   return (
@@ -29,14 +28,12 @@ const App = () => {
         <Router>
           {
             <Routes>
-
               <Route path="/" element={<LandingPage />} />
               <Route path="/loginPage" element={<LoginScreen />} />
               <Route path="/userPage" element={<UserProfileScreen />} />
               <Route path="/userSearchPage" element={<UserSearchScreen />} />
               <Route path="/verify-email" element={<EmailVerification />} />
               <Route path="/onBoardingPage" element={<OnBoardingScreen />} />
-
             </Routes>
           }
         </Router>
