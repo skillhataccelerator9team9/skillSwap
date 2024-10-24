@@ -13,7 +13,7 @@ const Login = () => {
 
   const { signIn } = useUser();
 
-  const location = useLocation();  // Hook to access passed state
+  const location = useLocation();  // Hook to access passed state (sign in and sign up)
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
