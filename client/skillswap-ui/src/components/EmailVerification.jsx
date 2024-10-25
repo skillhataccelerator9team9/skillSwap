@@ -13,7 +13,9 @@ const EmailVerification = () => {
   const navigate = useNavigate();  // Hook for navigation
 
   const handleLoginClick = () => {
-    navigate('/loginPage');  // Route to the login page
+    const mode = 'signIn';
+    navigate('/loginPage', { state: { mode } });  // Route to the login page
+
   };
 
   const handleSkipClick = () => {

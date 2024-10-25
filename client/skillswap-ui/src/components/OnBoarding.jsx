@@ -42,7 +42,8 @@ const OnBoarding = () => {
           </div>
           <div className="text-frame">
             <div className="text">
-              Discover and connect with talented professionals who possess the skills and expertise you need.
+              Discover and join a vibrant community of skilled individuals.
+              Request or offer a service to kick off your journey, all for free!
             </div>
             <div className="dots"></div>
             <button className="next-button" onClick={handleNextPhase}>Continue</button>
@@ -56,8 +57,9 @@ const OnBoarding = () => {
           </div>
           <div className="text-frame">
             <div className="text">
-              Connect with other swappers
-              and discuss the service you are interested in and accept
+              Chat securely with service providers or receivers,
+              discuss and agree on service details,
+              all within our platform for your peace of mind.
             </div>
             <div className="dots"></div>
             <button className="next-button" onClick={handleNextPhase}>Continue</button>
@@ -71,7 +73,9 @@ const OnBoarding = () => {
           </div>
           <div className="text-frame">
             <div className="text">
-              Complete your agreed swap and leave a review for your trade skill partner
+              Complete the transactions and review your experience to
+              boost your profile within the community.
+              Your feedback ensures transparency for future users.
             </div>
             <div className="dots"></div>
             <button className="next-button" onClick={handleNextPhase}>Continue</button>
