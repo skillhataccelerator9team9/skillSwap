@@ -10,6 +10,8 @@ import UserProfileScreen from './screens/UserProfileScreen';
 import UserSearchScreen from './screens/UserSearchScreen';
 import OnBoardingScreen from './screens/OnBoardingScreen';
 import EmailVerification from './components/EmailVerification';
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+import ResetPasswordScreen from './screens/ResetPasswordScreen';
 import { UserProvider } from './components/UserContext';
 
 
@@ -34,6 +36,8 @@ const App = () => {
               <Route path="/userSearchPage" element={<UserSearchScreen />} />
               <Route path="/verify-email" element={<EmailVerification />} />
               <Route path="/onBoardingPage" element={<OnBoardingScreen />} />
+              <Route path="/forgotPasswordPage" element={<ForgotPasswordScreen />} />
+              <Route path="/resetPasswordPage" element={<ResetPasswordScreen />} />
             </Routes>
           }
         </Router>

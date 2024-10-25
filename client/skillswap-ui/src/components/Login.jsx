@@ -68,6 +68,10 @@ const Login = () => {
     console.log("Switch login");
   };
 
+  const forgotPassowrdFunction = () => {
+    navigate('/forgotPasswordPage');
+  };
+
 
 
   const loginFunction = async (e) => {
@@ -291,7 +295,7 @@ const Login = () => {
                 </label>
 
               </div>
-              <label className="forgot-password-label">Forget Password?</label>
+              <label className="forgot-password-label" onClick={forgotPassowrdFunction}>Forget Password?</label>
             </div>
             :
             <div></div>
