@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate, useLocation } from 'react-router-dom';
-// import Cookies from 'js-cookie';
+
+
+import { FaEye, FaEyeSlash, FaRegTimesCircle } from 'react-icons/fa';
+import { FcGoogle } from "react-icons/fc";
+import clapsImage from '../assets/claps.png';
 
 import '../styles/login.css'
 import { useUser } from './UserContext';
@@ -23,6 +27,16 @@ const Login = () => {
   const [message2, setMessage2] = useState('Sign In');
   //const [message3, setMessage3] = useState('successfully_signin');
   const navigate = useNavigate();  // Hook for navigation
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const handleClearEmail = () => {
+    setEmail(''); // Clear the email state
+  };
+
 
   // Use the passed state to set the initial form mode
   useEffect(() => {
@@ -138,60 +152,146 @@ const Login = () => {
     }
   };
 
+
+
   return (
-    <div className='login'>
+    // <div className='login'>
 
-      <div className="secContainer container grid">
+    //   <div className="secContainer container grid">
 
-        <div className="loginTitle">
-          <h1>{buttonName}</h1>
+    //     <div className="loginTitle">
+    //       <h1>{buttonName}</h1>
+    //     </div>
+
+    //     <div className="loginForm">
+    //       <form className="login-Form" onSubmit={loginFunction}>
+    //         {buttonName === "Sign In" ? <div></div> : <input
+    //           className="loginInput"
+    //           type="text"
+    //           name="name"
+    //           value={username}
+    //           placeholder="Your Name" required
+    //           onChange={(e) => setUsername(e.target.value)}
+    //         />
+    //         }
+    //         <input
+    //           className="loginInput"
+    //           type="email"
+    //           name="email"
+    //           value={email}
+    //           placeholder="Your Email" required
+    //           onChange={(e) => setEmail(e.target.value)}
+    //         />
+    //         <input
+    //           className="loginInput"
+    //           type="password"
+    //           name="password"
+    //           value={password}
+    //           placeholder="Your password" required
+    //           onChange={(e) => setPassword(e.target.value)}
+    //         />
+    //         <div className="buttonAndStatus">
+    //           <button
+    //             className="btn btn1"
+    //             type="text"
+    //           >
+    //             {buttonName}
+    //           </button>
+
+    //         </div>
+
+    //         <h2 className="message" >
+
+    //           {message1} <span className="messageLogin" onClick={switchLogin}>{message2}</span>
+    //         </h2>
+    //       </form>
+    //     </div>
+    //   </div>
+
+    // </div>
+
+    <div className="signup-container">
+      <div className="signup-frame">
+        {/* Claps Image */}
+        <div className="claps-image-wrapper">
+          <img src={clapsImage} alt="Claps" className="claps-image" />
         </div>
 
-        <div className="loginForm">
-          <form className="login-Form" onSubmit={loginFunction}>
-            {buttonName === "Sign In" ? <div></div> : <input
-              className="loginInput"
-              type="text"
-              name="name"
-              value={username}
-              placeholder="Your Name" required
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            }
-            <input
-              className="loginInput"
-              type="email"
-              name="email"
-              value={email}
-              placeholder="Your Email" required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="loginInput"
-              type="password"
-              name="password"
-              value={password}
-              placeholder="Your password" required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="buttonAndStatus">
-              <button
-                className="btn btn1"
-                type="text"
-              >
-                {buttonName}
-              </button>
-
-            </div>
-
-            <h2 className="message" >
-
-              {message1} <span className="messageLogin" onClick={switchLogin}>{message2}</span>
-            </h2>
-          </form>
+        {/* Sign Up Heading */}
+        <div className="signup-heading">
+          <h1 className="signup-title">Sign Up</h1>
+          <p className="signup-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Diam feugiat urna tincidunt at aenean blandit
+          </p>
         </div>
+
+        <div className="input-wrapper">
+          <input
+            type="text"
+            className="input-field"
+            value={username}
+            placeholder="Your Name" required
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          {/* No icon for Full Name */}
+        </div>
+
+        <div className="input-wrapper">
+          <input
+            type="email"
+            className="input-field"
+            value={email}
+            placeholder="Your Email" required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FaRegTimesCircle className="input-icon"
+            onClick={handleClearEmail}
+          />
+        </div>
+
+        <div className="input-wrapper">
+          <input
+            type={isPasswordVisible ? 'text' : 'password'}
+            className="input-field"
+            value={password}
+            placeholder="Your password" required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="input-icon" onClick={togglePasswordVisibility}>
+            {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
+          </div>
+        </div>
+
+        {/* OR Section */}
+        <div className="or-section">
+          <span className="or-line"></span>
+          <span className="or-text">OR</span>
+          <span className="or-line"></span>
+        </div>
+
+        {/* Google Sign In */}
+        <div className="google-signin-wrapper">
+          <div className="google-signin">
+            <FcGoogle className="google-icon" />
+          </div>
+        </div>
+
+        {/* Agreement Checkbox */}
+        <div className="agreement-section">
+          <input type="checkbox" className="agreement-checkbox" />
+          <label className="agreement-label">
+            I’m agree to the Terms of Service and Privacy Policy
+          </label>
+        </div>
+
+        {/* Create Account Button */}
+        <button className="create-account-btn">Create Account</button>
+
+        {/* Sign In Option */}
+        <p className="signin-option">
+          Do you have an account? <span className="signin-link">Sign In</span>
+        </p>
       </div>
-
     </div>
   )
 }
