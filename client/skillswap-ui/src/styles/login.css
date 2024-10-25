@@ -160,6 +160,60 @@
   cursor: pointer;
 }
 
+.checkbox-frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 362px;
+  height: 24px;
+  gap: 0;
+  opacity: 1;
+  /* Adjust opacity as needed */
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Space between checkbox and label */
+}
+
+.checkbox {
+  width: var(--CheckboxSize);
+  height: var(--CheckboxSize);
+  border-radius: var(--CheckboxRadius);
+  border: 1px solid rgba(127, 163, 128, 1);
+  background: rgba(192, 220, 193, 1);
+  opacity: 1;
+  /* Adjust opacity as needed */
+  cursor: pointer;
+  /* Change cursor to pointer */
+}
+
+.remember-label {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  color: rgba(124, 139, 160, 1);
+  opacity: 1;
+  /* Adjust opacity as needed */
+}
+
+.forgot-password-label {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  color: rgba(46, 125, 49, 1);
+  cursor: pointer;
+  /* Change cursor to pointer */
+  opacity: 1;
+  /* Adjust opacity as needed */
+}
+
 .or-section {
   display: flex;
   align-items: center;

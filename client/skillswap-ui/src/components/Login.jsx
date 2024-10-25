@@ -37,6 +37,11 @@ const Login = () => {
     setEmail(''); // Clear the email state
   };
 
+  const [rememberPassword, setRememberPassword] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setRememberPassword(!rememberPassword);
+  };
 
   // Use the passed state to set the initial form mode
   useEffect(() => {
@@ -45,7 +50,7 @@ const Login = () => {
       setMessage1('Need an account?');
       setMessage2('Sign Up');
     } else {
-      setButtonName('Sign Up');
+      setButtonName('Create Account');
       setMessage1('Already have an account?');
       setMessage2('Sign In');
     }
@@ -53,10 +58,13 @@ const Login = () => {
 
   const switchLogin = (e) => {
     e.preventDefault();
-    setButtonName(prevMessage => (prevMessage === 'Sign In' ? 'Sign Up' : 'Sign In'));
+    setButtonName(prevMessage => (prevMessage === 'Sign In' ? 'Create Account' : 'Sign In'));
     setMessage2(prevMessage => (prevMessage === 'Sign Up' ? 'Sign In' : 'Sign Up'));
     setMessage1(prevMessage => (prevMessage === 'Need an account?' ? 'Already have an account?' : 'Need an account?'));
 
+    setUsername("");
+    setEmail("");
+    setPassword("");
     console.log("Switch login");
   };
 
@@ -219,78 +227,107 @@ const Login = () => {
 
         {/* Sign Up Heading */}
         <div className="signup-heading">
-          <h1 className="signup-title">Sign Up</h1>
+          <h1 className="signup-title">{message2 === "Sign In" ? "Sign Up" : "Sign In"}</h1>
           <p className="signup-subtitle">
             Lorem ipsum dolor sit amet consectetur. Diam feugiat urna tincidunt at aenean blandit
           </p>
         </div>
 
-        <div className="input-wrapper">
-          <input
-            type="text"
-            className="input-field"
-            value={username}
-            placeholder="Your Name" required
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          {/* No icon for Full Name */}
-        </div>
+        <form className="login-Form" onSubmit={loginFunction}>
+          {buttonName === "Sign In"
+            ?
+            <div></div>
+            :
+            <div className="input-wrapper">
+              <input
+                type="text"
+                className="input-field"
+                value={username}
+                placeholder="Your Name" required
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+          }
 
-        <div className="input-wrapper">
-          <input
-            type="email"
-            className="input-field"
-            value={email}
-            placeholder="Your Email" required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <FaRegTimesCircle className="input-icon"
-            onClick={handleClearEmail}
-          />
-        </div>
-
-        <div className="input-wrapper">
-          <input
-            type={isPasswordVisible ? 'text' : 'password'}
-            className="input-field"
-            value={password}
-            placeholder="Your password" required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="input-icon" onClick={togglePasswordVisibility}>
-            {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
+          <div className="input-wrapper">
+            <input
+              type="email"
+              className="input-field"
+              value={email}
+              placeholder="Your Email" required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FaRegTimesCircle className="input-icon"
+              onClick={handleClearEmail}
+            />
           </div>
-        </div>
 
-        {/* OR Section */}
-        <div className="or-section">
-          <span className="or-line"></span>
-          <span className="or-text">OR</span>
-          <span className="or-line"></span>
-        </div>
-
-        {/* Google Sign In */}
-        <div className="google-signin-wrapper">
-          <div className="google-signin">
-            <FcGoogle className="google-icon" />
+          <div className="input-wrapper">
+            <input
+              type={isPasswordVisible ? 'text' : 'password'}
+              className="input-field"
+              value={password}
+              placeholder="Your password" required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="input-icon" onClick={togglePasswordVisibility}>
+              {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
+            </div>
           </div>
-        </div>
 
-        {/* Agreement Checkbox */}
-        <div className="agreement-section">
-          <input type="checkbox" className="agreement-checkbox" />
-          <label className="agreement-label">
-            I’m agree to the Terms of Service and Privacy Policy
-          </label>
-        </div>
+          {buttonName === "Sign In"
+            ?
+            <div className="checkbox-frame">
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  checked={rememberPassword}
+                  onChange={handleCheckboxChange}
+                  className="checkbox"
+                />
+                <label htmlFor="remember" className="remember-label">
+                  Remember Password
+                </label>
 
-        {/* Create Account Button */}
-        <button className="create-account-btn">Create Account</button>
+              </div>
+              <label className="forgot-password-label">Forget Password?</label>
+            </div>
+            :
+            <div></div>
+          }
 
-        {/* Sign In Option */}
-        <p className="signin-option">
-          Do you have an account? <span className="signin-link">Sign In</span>
-        </p>
+
+          {/* OR Section */}
+          <div className="or-section">
+            <span className="or-line"></span>
+            <span className="or-text">OR</span>
+            <span className="or-line"></span>
+          </div>
+
+          {/* Google Sign In */}
+          <div className="google-signin-wrapper">
+            <div className="google-signin">
+              <FcGoogle className="google-icon" />
+            </div>
+          </div>
+
+          {/* Agreement Checkbox */}
+          <div className="agreement-section">
+            <input type="checkbox" className="agreement-checkbox" />
+            <label className="agreement-label">
+              I’m agree to the Terms of Service and Privacy Policy
+            </label>
+          </div>
+
+          {/* Create Account Button */}
+          <button className="create-account-btn">{buttonName}</button>
+
+          {/* Sign In Option */}
+          <p className="signin-option">
+            {message1} <span className="signin-link" onClick={switchLogin}>{message2}</span>
+          </p>
+        </form>
       </div>
     </div>
   )
