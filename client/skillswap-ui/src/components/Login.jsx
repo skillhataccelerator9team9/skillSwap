@@ -6,12 +6,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaRegTimesCircle } from 'react-icons/fa';
 import { FcGoogle } from "react-icons/fc";
 import clapsImage from '../assets/claps.png';
+import { GoogleLogin } from 'react-google-login';
 
 import '../styles/login.css'
 import { useUser } from './UserContext';
 
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+const googleClientID = process.env.REACT_APP_GOOGLE_CLIENT_ID
 
 const Login = () => {
 
@@ -165,62 +167,7 @@ const Login = () => {
   };
 
 
-
   return (
-    // <div className='login'>
-
-    //   <div className="secContainer container grid">
-
-    //     <div className="loginTitle">
-    //       <h1>{buttonName}</h1>
-    //     </div>
-
-    //     <div className="loginForm">
-    //       <form className="login-Form" onSubmit={loginFunction}>
-    //         {buttonName === "Sign In" ? <div></div> : <input
-    //           className="loginInput"
-    //           type="text"
-    //           name="name"
-    //           value={username}
-    //           placeholder="Your Name" required
-    //           onChange={(e) => setUsername(e.target.value)}
-    //         />
-    //         }
-    //         <input
-    //           className="loginInput"
-    //           type="email"
-    //           name="email"
-    //           value={email}
-    //           placeholder="Your Email" required
-    //           onChange={(e) => setEmail(e.target.value)}
-    //         />
-    //         <input
-    //           className="loginInput"
-    //           type="password"
-    //           name="password"
-    //           value={password}
-    //           placeholder="Your password" required
-    //           onChange={(e) => setPassword(e.target.value)}
-    //         />
-    //         <div className="buttonAndStatus">
-    //           <button
-    //             className="btn btn1"
-    //             type="text"
-    //           >
-    //             {buttonName}
-    //           </button>
-
-    //         </div>
-
-    //         <h2 className="message" >
-
-    //           {message1} <span className="messageLogin" onClick={switchLogin}>{message2}</span>
-    //         </h2>
-    //       </form>
-    //     </div>
-    //   </div>
-
-    // </div>
 
     <div className="signup-container">
       <div className="signup-frame">
@@ -315,6 +262,7 @@ const Login = () => {
               <FcGoogle className="google-icon" />
             </div>
           </div>
+
 
           {/* Agreement Checkbox */}
           <div className="agreement-section">
