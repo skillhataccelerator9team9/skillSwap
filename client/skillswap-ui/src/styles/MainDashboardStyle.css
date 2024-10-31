@@ -1,0 +1,219 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+}
+
+.greeting {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: rgba(0, 0, 0, 1);
+  text-align: left;
+}
+
+.coin-balance {
+  display: flex;
+  flex-direction: row;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+}
+
+.coin-amount {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  padding-left: 20px;
+}
+
+.coin-icon {
+  margin-left: 5px;
+}
+
+.stats-frame {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 361px;
+  height: 223px;
+}
+
+.stat-section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 173px;
+  height: 130px;
+  padding: 13.19px 15px;
+  gap: 13.19px;
+  background: rgba(255, 255, 255, 1);
+  border: 1.28px solid rgba(41, 45, 50, 0.2);
+  border-radius: 6.6px;
+}
+
+.completed-task .stat-icon {
+  background: rgba(0, 128, 0, 0.2);
+}
+
+.in-progress-task .stat-icon {
+  background: rgba(255, 185, 4, 0.2);
+
+}
+
+.incoming-request .stat-icon {
+  background: rgba(74, 116, 234, 0.15);
+}
+
+.outgoing-request .stat-icon {
+  background: rgba(251, 73, 59, 0.2);
+
+}
+
+.completed-task .icon {
+  color: rgba(2, 128, 19, 1);
+}
+
+.in-progress-task .icon {
+  color: rgba(255, 185, 4, 1);
+}
+
+.incoming-request .icon {
+  color: rgba(32, 113, 234, 1);
+}
+
+.outgoing-request .icon {
+  color: rgba(234, 48, 32, 1);
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 137px;
+  height: 42px;
+  gap: 41px;
+  opacity: 0px;
+
+}
+
+.stat-title {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: rgba(41, 45, 50, 1);
+}
+
+.stat-number {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: rgba(41, 45, 50, 1);
+}
+
+.offer-services {
+  margin-top: 50px;
+  position: relative;
+  width: 361px;
+  height: 183px;
+  border-radius: 10px;
+  background-size: cover;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.offer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(276.08deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.7) 100%);
+  border-radius: 10px;
+  pointer-events: none;
+  /* Keeps overlay from blocking clicks */
+}
+
+.offer-text {
+  position: relative;
+  /* Ensures text appears above the overlay */
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  color: rgba(255, 255, 255, 1);
+  width: 181px;
+}
+
+.offer-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 139px;
+  height: 38px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.trending-skills {
+  width: 347px;
+  height: 76px;
+  margin-top: 25px;
+  margin-left: 14px;
+}
+
+.trending-title {
+  font-family: Poppins;
+  font-size: 15.26px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+}
+
+.skills-list {
+  display: flex;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 59px;
+  height: 41px; */
+  padding: 10px 20px 10px 20px;
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(41, 45, 50, 1);
+}

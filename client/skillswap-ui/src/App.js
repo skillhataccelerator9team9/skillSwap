@@ -39,7 +39,7 @@ const App = () => {
               <Route path="/onBoardingPage" element={<OnBoardingScreen />} />
               <Route path="/forgotPasswordPage" element={<ForgotPasswordScreen />} />
               <Route path="/resetPasswordPage" element={<ResetPasswordScreen />} />
-              <Route path="/dashboardScreen" element={<DashboardScreen />} />
+              <Route path="/dashboard" element={<DashboardScreen />} />
             </Routes>
           }
         </Router>

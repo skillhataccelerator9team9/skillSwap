@@ -42,12 +42,6 @@ const UserNavBar = () => {
 
     window.addEventListener('scroll', addBackground);
 
-    // Fetch the username from cookies when the component loads
-    // const storedUserName = Cookies.get('user');
-    // if (storedUserName) {
-    //   setUserName(storedUserName);
-    // }
-
     return () => {
       window.removeEventListener('scroll', addBackground); // Cleanup listener on component unmount
     };

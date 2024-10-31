@@ -115,7 +115,8 @@ const Login = () => {
         // navigate('/userPage', { state: { user: userData } });
 
         signIn(userData); // Pass user data to context
-        navigate('/userPage');
+        // navigate('/userPage');
+        navigate('/dashboard');
 
 
       } catch (err) {
@@ -161,11 +162,8 @@ const Login = () => {
         console.error(err.response.data);
         alert("Signup failed. Please check your details.");
       }
-
-
     }
   };
-
 
   return (
 
