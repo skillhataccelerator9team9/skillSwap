@@ -67,10 +67,10 @@ const UserNavBar = () => {
           <a href="#" className="navbar-item">Search</a> */}
           <ul className="navbar-items">
             <li className='navbar-item'>
-              <NavLink to="/userPage" onClick={() => scrollPage()} className={({ isActive }) =>
+              <NavLink to="/dashboard" onClick={() => scrollPage()} className={({ isActive }) =>
                 isActive ? "activeNavLink" : "navLink"
               }>
-                User Profile
+                Dashboard
               </NavLink>
             </li>
 
@@ -78,16 +78,32 @@ const UserNavBar = () => {
               <NavLink to="/userSearchPage" onClick={() => scrollPage()} className={({ isActive }) =>
                 isActive ? "activeNavLink" : "navLink"
               }>
-                Search
+                Skills
               </NavLink>
             </li>
+
+            {/* <li className='navbar-item'>
+              <NavLink to="/message" onClick={() => scrollPage()} className={({ isActive }) =>
+                isActive ? "activeNavLink" : "navLink"
+              }>
+                Message
+              </NavLink>
+            </li> */}
+
+            <li className='navbar-item'>
+              <NavLink to="/userPage" onClick={() => scrollPage()} className={({ isActive }) =>
+                isActive ? "activeNavLink" : "navLink"
+              }>
+                User Profile
+              </NavLink>
+            </li>
+
+
           </ul>
         </div>
 
         <div className="nav-userName-signOut">
-          {/* <h1>{userName || 'Name'}</h1> */}
-
-          <h1>Welcome, {userName || 'User'}!</h1>
+          {/* <h1>Welcome, {userName || 'User'}!</h1> */}
           <button className="navbar-button" onClick={() => handleSignOut()}>
             Sign Out
           </button>

@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px;
+  /* padding-left: 30px;
+  padding-top: 30px; */
+  padding: 150px 20px 150px 20px;
 }
 
 .greeting {
-  font-family: Lato;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: 400;
   line-height: 19.2px;
@@ -45,8 +47,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  width: 361px;
-  height: 223px;
+  /* width: 361px;
+  height: 223px; */
 }
 
 .stat-section {
@@ -184,10 +186,10 @@
 }
 
 .trending-skills {
-  width: 347px;
-  height: 76px;
+  /* width: 347px;
+  height: 76px; */
   margin-top: 25px;
-  margin-left: 14px;
+  /* margin-left: 10px; */
 }
 
 .trending-title {
@@ -216,4 +218,239 @@
   font-size: 14px;
   font-weight: 500;
   color: rgba(41, 45, 50, 1);
+}
+
+/* Trading Skills Section */
+.trading-skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Section Title */
+.section-title {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Top Skilltopians Section */
+.top-skilltopians {
+  margin-top: 40px;
+}
+
+.top-skilltopians-title {
+  font-family: Poppins, sans-serif;
+  font-size: 15.26px;
+  font-weight: 500;
+  line-height: 22.89px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.skilltopians-list {
+  display: flex;
+  gap: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  /* Enables horizontal scrolling */
+  padding: 10px;
+  gap: 15px;
+  /* Space between each frame */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scroll-behavior: smooth;
+  /* Smooth scrolling effect */
+}
+
+/* Optional styling for scrollbar */
+.top-skilltopians::-webkit-scrollbar {
+  height: 8px;
+}
+
+.top-skilltopians::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 10px;
+}
+
+/* Skilltopian Card */
+.skilltopian-card {
+  width: 100%;
+  max-width: 200px;
+  /* Adjust the max width if necessary */
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background-color: #fff;
+}
+
+/* Elements inside each Skilltopian Card */
+.person-photo {
+  width: 62px;
+  height: 62px;
+  background-color: #ddd;
+  /* Placeholder color */
+  border-radius: 50%;
+}
+
+
+/* Circular Photo */
+.photo-circle {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.person-name {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+}
+
+.person-skill {
+  font-family: Lato, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.view-profile-btn {
+  width: 136px;
+  height: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(2, 128, 19, 1);
+  background: transparent;
+  color: rgba(2, 128, 19, 1);
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+  text-align: center;
+}
+
+
+
+
+/* Tips and Articles Heading */
+.tips-heading {
+  width: 377px;
+  height: 23px;
+  font-family: Poppins, sans-serif;
+  font-size: 15.26px;
+  font-weight: 500;
+  line-height: 22.89px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+}
+
+.tips-articles-list {
+  display: flex;
+  gap: 20px;
+
+  flex-wrap: nowrap;
+  /* Prevents wrapping to the next line */
+  overflow-x: auto;
+  /* Enables horizontal scrolling */
+  padding: 10px;
+  /* Optional padding around the list */
+  gap: 15px;
+  /* Space between each frame */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scroll-behavior: smooth;
+  /* Smooth scrolling effect */
+
+}
+
+/* Photo Frame */
+.photo-frame {
+  width: 273px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  margin-bottom: px;
+
+  min-width: 250px;
+  /* Minimum width of each frame */
+  height: 164px;
+  /* Adjust height as needed */
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  /* Example background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* Padding inside each frame */
+  text-align: center;
+  /* Center text in the frame */
+}
+
+/* Gradient Overlay */
+.photo-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(188.76deg, rgba(0, 0, 0, 0) 46.01%, rgba(0, 0, 0, 0.5) 82.68%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Heading on Photo */
+.photo-heading {
+  width: 92px;
+  height: 18px;
+  gap: 0px;
+  opacity: 0px;
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: right;
+  margin-bottom: 50px;
+
+}
+
+/* Description on Photo */
+.photo-description {
+  width: 224px;
+  height: 63px;
+  top: 87px;
+  left: 17px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
 }

@@ -8,7 +8,7 @@ function DashboardScreen () {
 
   return (
     <div className='DashboardScreen'>
-      {/* <UserNavBar /> */}
+      <UserNavBar />
       <MainDashboard />
     </div>
   )
