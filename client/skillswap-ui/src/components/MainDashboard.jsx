@@ -17,13 +17,10 @@ const MainDashboard = () => {
   const [userName, setUserName] = useState('');
   const [userPoints, setUserPoints] = useState('');
 
-
   useEffect(() => {
-
-    setUserName(userData.user?.username);
-    setUserPoints(userData.user?.points);
-
-  }, []);
+    setUserName(userData.user?.username || '');
+    setUserPoints(userData.user?.points || '');
+  }, [userData.user?.username, userData.user?.points]);
 
 
   return (
