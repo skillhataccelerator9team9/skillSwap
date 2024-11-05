@@ -27,6 +27,8 @@ const Login = () => {
   const [buttonName, setButtonName] = useState('Sign Up');
   const [message1, setMessage1] = useState('Already have an account?');
   const [message2, setMessage2] = useState('Sign In');
+  const [message3, setMessage3] = useState('Get Started');
+  const [message4, setMessage4] = useState('Create an account to start using brand name');
   const navigate = useNavigate();
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -50,10 +52,12 @@ const Login = () => {
       setButtonName('Sign In');
       setMessage1('Need an account?');
       setMessage2('Sign Up');
+      setMessage3("Welcome Back");
     } else {
       setButtonName('Create Account');
       setMessage1('Already have an account?');
       setMessage2('Sign In');
+      setMessage3("Get Started");
     }
   }, [location.state]);
 
@@ -62,6 +66,8 @@ const Login = () => {
     setButtonName(prevMessage => (prevMessage === 'Sign In' ? 'Create Account' : 'Sign In'));
     setMessage2(prevMessage => (prevMessage === 'Sign Up' ? 'Sign In' : 'Sign Up'));
     setMessage1(prevMessage => (prevMessage === 'Need an account?' ? 'Already have an account?' : 'Need an account?'));
+    setMessage3(prevMessage => (prevMessage === 'Welcome Back' ? 'Get Started' : 'Welcome Back'));
+    setMessage4(prevMessage => (prevMessage === 'Login into your account' ? 'Create an account to start using brand name' : 'Login into your account'));
 
     setUsername("");
     setEmail("");
@@ -147,7 +153,6 @@ const Login = () => {
         setEmail('');
         setPassword('');
 
-
         setButtonName('Sign In');
         setMessage1('Need an account?');
         setMessage2('Sign Up');
@@ -170,9 +175,9 @@ const Login = () => {
 
         {/* Sign Up Heading */}
         <div className="signup-heading">
-          <h1 className="signup-title">{message2 === "Sign In" ? "Sign Up" : "Sign In"}</h1>
+          <h1 className="signup-title">{message3}</h1>
           <p className="signup-subtitle">
-            Lorem ipsum dolor sit amet consectetur. Diam feugiat urna tincidunt at aenean blandit
+            {message4}
           </p>
         </div>
 
